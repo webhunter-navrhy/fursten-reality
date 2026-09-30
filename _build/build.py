@@ -138,7 +138,7 @@ DONE = [x for x in LIST if is_done(x)]
 
 def badges(x):
     key, lab, kind = x['st']
-    out = f'<span class="badge badge--kind">{KIND.get(x.get("kind"), "Na predaj")}</span>'
+    out = '' if kind == 'done' else f'<span class="badge badge--kind">{KIND.get(x.get("kind"), "Na predaj")}</span>'
     if kind != 'live': out += f'<span class="badge badge--{kind}">{lab}</span>'
     return out
 
