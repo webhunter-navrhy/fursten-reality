@@ -502,6 +502,7 @@ a.cb-line:hover span { color: var(--gold-d); }
   .brand img, .nav.scrolled .brand img { height: 40px; }
   .hero { padding-top: 104px; }
   .hero-h { font-size: clamp(3rem, 14vw, 4.2rem); }
+  .hero .eyebrow { font-size: .68rem; letter-spacing: .14em; }
   .hero-ctas { grid-template-columns: 1fr; }
   .cta-card { min-height: 0; padding: 1.2rem 1.2rem 1.1rem; }
   .hero-fig { width: 100%; margin-top: 1.2rem; }

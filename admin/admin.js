@@ -402,7 +402,7 @@ function logout() {
 }
 
 /* ------------------------------------------------------------ SHELL */
-function avatar(cls = '') { const p = S.D.site?.['about.photo']; return p ? `<img src="${esc(src(p))}" alt="" class="${cls}">` : `<span class="mono-av ${cls}">MF</span>`; }
+function avatar(cls = '') { const p = S.D.site?.['about.photo_small'] || S.D.site?.['about.photo']; return p ? `<img src="${esc(src(p))}" alt="" class="${cls}">` : `<span class="mono-av ${cls}">MF</span>`; }
 function pagesNav() { return S.schema.filter((p) => p.id !== 'general'); }
 function renderShell() {
   $('#app').innerHTML = `<div class="shell">
@@ -496,7 +496,10 @@ function todos() {
     const missing = f.kind === 'textarea' ? /\[DOPLNI/.test(String(v || '')) : isTodo(v);
     out.push({ label: f.label, where: p.title, ok: !missing, href: `#/obsah/${p.id}` });
   }
-  return out;
+  const mail = String(S.D.site['contact.email'] || '');
+  out.push({ label: 'Vlastná e-mailová adresa', where: 'Kontakt a údaje – e-mail na vlastnej doméne (zatiaľ ' + (mail || '—') + ')', ok: !!mail && !/@vasereality\.sk$/i.test(mail), href: '#/obsah/general' });
+  out.push({ label: 'Referencie klientov', where: 'Sekcia Referencie sa na webe ukáže po pridaní prvej', ok: S.D.reviews.some((r) => !r.hidden), href: '#/referencie' });
+  return out.sort((x, y) => x.ok - y.ok);
 }
 
 /* ------------------------------------------------------------ DASHBOARD */
@@ -527,8 +530,8 @@ function viewDash() {
       <div style="display:grid;gap:1.4rem;align-content:start">
         <div class="card"><div class="card-head"><h3>Pred spustením webu <small>${open ? `zostáva ${open}` : 'všetko hotové'}</small></h3></div>
           <div class="card-pad"><ul class="checklist">${td.map((t) => `<li class="${t.ok ? 'ok' : ''}"><span class="ck">${t.ok ? '✓' : '!'}</span><span><b>${esc(t.label)}</b><br><small class="muted">${esc(t.where)}</small></span>${t.ok ? '' : `<a href="${t.href}">Doplniť</a>`}</li>`).join('')}
-            <li class="${S.def ? '' : 'ok'}"><span class="ck">${S.def ? '!' : '✓'}</span><span><b>Vlastné heslo do administrácie</b><br><small class="muted">Nastavenia</small></span>${S.def ? '<a href="#/nastavenia">Zmeniť</a>' : ''}</li></ul>
-          <p class="hint" style="margin-top:.8rem">Zvýraznené údaje sú na webe zatiaľ označené ako „doplní sa“. Referencie sa na webe ukážu, keď pridáte prvú.</p></div></div>
+</ul>
+          <p class="hint" style="margin-top:.8rem">Doménu a e-mail na vlastnej doméne nastaví správca webu (WebHunter). Referencie sa na webe ukážu, keď pridáte prvú.</p></div></div>
         <div class="card"><div class="card-head"><h3>Rýchle akcie</h3></div>
           <div class="qa">
             <a href="#/nehnutelnost/new"><span class="ic">${IC.building}</span><span><b>Pridať nehnuteľnosť</b><small>Fotky, popis, cena, parametre</small></span></a>

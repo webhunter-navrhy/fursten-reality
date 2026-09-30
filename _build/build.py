@@ -22,8 +22,15 @@ esc = H.escape
 def T(k): return S.get(k, '') if S.get(k) is not None else ''
 def TL(k): return S.get(k) or []
 
+import re as _re
+def _svgw(p):
+    m = _re.search(r'viewBox="0 0 ([\d.]+) 61"', open(p, encoding='utf-8').read()); return round(float(m.group(1))) if m else 210
+OWN = bool(S.get('brand.own_logo'))
+LOGO = 'img/site/brand/fursten-logo-horizontal.svg' if OWN else 'img/site/logo.svg'
+LOGO_L = 'img/site/brand/fursten-logo-horizontal-light.svg' if OWN else 'img/site/logo-light.svg'
+LOGO_W = _svgw(LOGO) if OWN else 210
 NAME = T('contact.name'); TEL = T('contact.phone'); TEL_H = 'tel:' + re.sub(r'[^\d+]', '', TEL); MAIL = T('contact.email')
-PHOTO = T('about.photo')
+PHOTO = T('about.photo'); PHOTO_S = T('about.photo_small') or PHOTO
 
 # ------------------------------------------------------------------ icons
 def ico(d, w=18, sw=1.5, fill='none'):
@@ -185,7 +192,7 @@ def header(r, active):
     return f'''<a class="skip" href="#obsah">Preskočiť na obsah</a>
 <header class="nav">
   <div class="nav-in">
-    <a href="{r}index.html" class="brand" aria-label="Fürsten Reality – domov"><img src="{r}img/site/logo.svg" alt="Fürsten Reality" width="210" height="61"></a>
+    <a href="{r}index.html" class="brand" aria-label="Fürsten Reality – domov"><img src="{r}{LOGO}" alt="Fürsten Reality" width="{LOGO_W}" height="61"></a>
     <nav class="menu" aria-label="Hlavná navigácia">
       {links}
       <a class="menu-tel" href="{TEL_H}">{PHONE}<span>{esc(TEL)}</span></a>
@@ -199,9 +206,13 @@ def monogram(cls=''):
     return (f'<div class="mono {cls}" aria-hidden="true"><svg viewBox="0 0 200 260"><path d="M10 258V100a90 90 0 0 1 180 0v158" fill="none" stroke="currentColor" stroke-width="1"/>'
             f'<path d="M26 258V104a74 74 0 0 1 148 0v154" fill="none" stroke="currentColor" stroke-width=".6" opacity=".55"/></svg><span>MF</span><small>Mária Fürsten</small></div>')
 
+SMALL = ('hc-photo', 'am-photo', 'pa-photo')
 def portrait(cls='', eager=False):
-    if PHOTO:
-        return f'<img class="{cls}" {img_attrs(PHOTO, "(max-width: 760px) 90vw, 40vw")} alt="{esc(NAME)}, realitná maklérka" {"" if eager else "loading=\"lazy\""}>'
+    small = cls in SMALL
+    p = PHOTO_S if small else PHOTO
+    if p:
+        attrs = f'src="@/{esc(p)}" width="112" height="112"' if small else img_attrs(p, "(max-width: 760px) 90vw, 40vw")
+        return f'<img class="{cls}" {attrs} alt="{esc(NAME)}, realitná maklérka" {"" if eager else "loading=\"lazy\""} decoding="async">'
     return monogram(cls)
 
 def footer(r):
@@ -211,7 +222,7 @@ def footer(r):
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <img src="{r}img/site/logo-light.svg" alt="Fürsten Reality" width="210" height="61">
+        <img src="{r}{LOGO_L}" alt="Fürsten Reality" width="{LOGO_W}" height="61">
         <p>{esc(T('footer.text'))}</p>
       </div>
       <div><h4>Web</h4><ul>
@@ -229,9 +240,9 @@ def footer(r):
       </ul></div>
       <div><h4>Podnikateľ</h4><ul class="legal">
         <li>{esc(T('legal.name'))}</li>
-        <li>IČO: {lg(T('legal.ico'))}</li>
+        <li>IČO: {lg(T('legal.ico'))}{(' · IČ DPH: ' + esc(T('legal.vat'))) if T('legal.vat') else ''}</li>
         <li>Miesto podnikania: {lg(T('legal.address'))}</li>
-        <li>{lg(T('legal.register'), 'zápis v registri – doplní sa')}</li>
+        {f"<li>{esc(T('legal.register'))}</li>" if T('legal.register') else ''}
       </ul></div>
     </div>
     <p class="foot-coop">{esc(T('legal.coop'))}</p>
@@ -267,9 +278,10 @@ def write(path, title, desc, body, active='', img='img/site/og.jpg', ld='', seco
 LD_AGENT = '\n<script type="application/ld+json">' + json.dumps({
     '@context': 'https://schema.org', '@type': 'RealEstateAgent', 'name': 'Fürsten Reality – Mária Fürsten', 'url': BASE,
     'logo': BASE + 'img/site/logo.svg', 'image': BASE + 'img/site/og.jpg', 'telephone': re.sub(r'[^\d+]', '', TEL), 'email': MAIL,
-    'areaServed': ['Dubnica nad Váhom', 'Ilava', 'Trenčín', 'Nová Dubnica', 'Trenčianske Teplice', 'Púchov'],
+    'areaServed': ['Púchov', 'Považská Bystrica', 'Ilava', 'Dubnica nad Váhom', 'Trenčín', 'Nová Dubnica', 'Trenčianske Teplice'],
+    'taxID': T('legal.vat'), 'vatID': T('legal.vat'),
     'knowsLanguage': ['sk', 'cs', 'de'], 'founder': {'@type': 'Person', 'name': NAME, 'jobTitle': 'realitná maklérka'},
-    'address': {'@type': 'PostalAddress', 'addressLocality': 'Dubnica nad Váhom', 'addressCountry': 'SK'},
+    'address': {'@type': 'PostalAddress', 'streetAddress': 'Centrum II 92/54-15', 'postalCode': '018 41', 'addressLocality': 'Dubnica nad Váhom', 'addressCountry': 'SK'},
 }, ensure_ascii=False) + '</script>'
 
 # ------------------------------------------------------------------ forms
@@ -378,7 +390,7 @@ def build_home():
     </figure>
   </div>
   <div class="wrap hero-areas fade" style="--d:.9s" aria-label="Kde pôsobím">
-    {''.join(f'<span>{esc(a)}</span>' for a in ['Dubnica nad Váhom', 'Ilava', 'Trenčín', 'Nová Dubnica', 'Trenčianske Teplice', 'Púchov a okolie'])}
+    {''.join(f'<span>{esc(a)}</span>' for a in ['Púchov', 'Považská Bystrica', 'Ilava', 'Dubnica nad Váhom', 'Trenčín', 'a priľahlé obce'])}
   </div>
 </section>
 
@@ -624,7 +636,7 @@ def build_sell():
 def build_search():
     fields = (f_chips('Chcem', 'Chcem', ['Kúpiť', 'Prenajať si'])
               + f_chips('Typ', 'Čo hľadáte?', ['Byt', 'Rodinný dom', 'Pozemok', 'Chata / chalupa'], multi=True)
-              + f_in('Lokalita', 'Lokalita', ph='napr. Dubnica, Ilava, Trenčín a okolie', full=True)
+              + f_in('Lokalita', 'Lokalita', ph='napr. Púchov, Ilava, Dubnica, Trenčín a okolie', full=True)
               + f_in('Rozpočet', 'Rozpočet do', ph='napr. 180 000 €', mode='text') + f_in('Izby', 'Počet izieb / plocha', ph='napr. 3 izby, od 70 m²')
               + f_contact('Čo je pre vás dôležité', 'Záhrada, parkovanie, škola nablízku, termín sťahovania…'))
     latest = ''.join(card(x, k) for k, x in enumerate(ACTIVE[:3]))
@@ -660,7 +672,7 @@ def build_contact():
 {contact_section(None, T('contactsec.text'), 'kontakt-form', show_head=False)}
 {offmarket_band()}
 '''
-    write('kontakt.html', T('contactpage.seo_title'), f'Zavolajte na {TEL} alebo napíšte na {MAIL}. Mária Fürsten – realitná maklérka pre Dubnicu nad Váhom, Ilavu, Trenčín a okolie.', body, 'kontakt.html')
+    write('kontakt.html', T('contactpage.seo_title'), f'Zavolajte na {TEL} alebo napíšte na {MAIL}. Mária Fürsten – realitná maklérka pre Púchov, Považskú Bystricu, Ilavu, Dubnicu nad Váhom, Trenčín a priľahlé obce.', body, 'kontakt.html')
 
 # ================================================================== GDPR
 def build_privacy():

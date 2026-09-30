@@ -23,8 +23,9 @@ GDPR = """Tieto informácie vysvetľujú, ako spracúvam osobné údaje, ktoré 
 
 ## Prevádzkovateľ
 Mária Fürsten – Fürsten Reality
-[DOPLNIŤ: miesto podnikania]
-IČO: [DOPLNIŤ: IČO]
+Centrum II 92/54-15, 018 41 Dubnica nad Váhom
+IČO: 40380505 · IČ DPH: SK1020072713
+Fyzická osoba – podnikateľka zapísaná v živnostenskom registri
 E-mail: fursten@vasereality.sk · telefón: +421 904 808 521
 
 ## Aké údaje spracúvam a prečo
@@ -34,11 +35,10 @@ Meno, telefón, e-mail a obsah vašej správy (napríklad typ a lokalitu nehnute
 Spracúvanie je nevyhnutné na vykonanie opatrení pred uzavretím zmluvy na vašu žiadosť (čl. 6 ods. 1 písm. b) GDPR), prípadne ide o môj oprávnený záujem odpovedať na vašu správu (čl. 6 ods. 1 písm. f) GDPR).
 
 ## Ako dlho údaje uchovávam
-Kým vybavujeme vašu požiadavku, najdlhšie však [DOPLNIŤ: napr. 2 roky] od posledného kontaktu. Ak spolu uzavrieme zmluvu, údaje uchovávam po dobu stanovenú právnymi predpismi.
+Kým vybavujeme vašu požiadavku, najdlhšie však 3 roky od posledného kontaktu. Ak spolu uzavrieme zmluvu, údaje uchovávam po dobu stanovenú právnymi predpismi.
 
 ## Komu údaje poskytujem
 Údaje nepredávam. Pri spolupráci na konkrétnom obchode ich môžem poskytnúť realitnej kancelárii VAŠE REALITY s.r.o., s ktorou spolupracujem, a to len v nevyhnutnom rozsahu. Technicky ich spracúvajú aj poskytovatelia webu a e-mailu (sprostredkovatelia): WebHunter s.r.o. a služba na doručovanie e-mailov z formulárov.
-[DOPLNIŤ: ďalší príjemcovia, ak nejakí sú]
 
 ## Vaše práva
 Máte právo na prístup k údajom, ich opravu, vymazanie, obmedzenie spracúvania, prenosnosť a právo namietať. Stačí napísať na fursten@vasereality.sk. Ak si myslíte, že s údajmi nezaobchádzam správne, môžete podať návrh na Úrad na ochranu osobných údajov SR, Hraničná 12, 820 07 Bratislava (dataprotection.gov.sk).
@@ -46,7 +46,7 @@ Máte právo na prístup k údajom, ich opravu, vymazanie, obmedzenie spracúvan
 ## Cookies
 Tento web nepoužíva reklamné ani analytické cookies. Ukladá sa len technicky nevyhnutné nastavenie prehliadača.
 
-Posledná aktualizácia: [DOPLNIŤ: dátum]"""
+Posledná aktualizácia: 30. 9. 2026"""
 
 SCHEMA = [
  {'id': 'general', 'title': 'Kontakt a údaje', 'icon': 'contact', 'sections': [
@@ -57,33 +57,39 @@ SCHEMA = [
     F('contact.email', 'E-mail', default='fursten@vasereality.sk'),
     F('contact.hours', 'Kedy sa mi môžete ozvať', default='Pondelok – piatok 8:00 – 18:00, po dohode aj cez víkend'),
     F('contact.languages', 'Jazyky', default='slovenčina · čeština · nemčina'),
-    F('contact.region', 'Pôsobnosť (krátko)', default='Dubnica nad Váhom · Ilava · Trenčín a okolie'),
+    F('contact.region', 'Pôsobnosť (krátko)', default='Púchov · Považská Bystrica · Ilava · Dubnica nad Váhom · Trenčín a priľahlé obce'),
     F('contact.vr_url', 'Môj profil na Vaše reality', 'url', 'https://www.vasereality.sk/makler/10--maria-fursten'),
     F('contact.facebook', 'Facebook (nepovinné)', 'url', ''),
     F('contact.instagram', 'Instagram (nepovinné)', 'url', ''),
   ]},
   {'title': 'Fotografia', 'fields': [
-    F('about.photo', 'Moja fotografia (portrét)', 'image', '', 'Najlepšie výška aspoň 1600 px, na výšku. Kým tu nie je fotka, web ukazuje elegantný monogram.', todo=True),
+    F('about.photo', 'Moja fotografia (portrét)', 'image', 'img/site/maria-fursten.webp', 'Na výšku (pomer 3 : 4), ideálne aspoň 1200 px. Zobrazí sa v sekcii O mne. Keď fotku odoberiete, web ukáže monogram.'),
+    F('about.photo_small', 'Malá fotka – tvár (štvorec)', 'image', 'img/site/maria-fursten-tvar.webp', 'Výrez tváre na štvorec. Zobrazuje sa v malom krúžku (úvod, kontakt, detail nehnuteľnosti).'),
   ]},
-  {'title': 'Pred spustením – údaje o podnikaní', 'fields': [
+  {'title': 'Logo', 'fields': [
+    F('brand.own_logo', 'Použiť logo z Facebooku (s domčekom) namiesto písma „Fürsten“', 'bool', False, 'Vypnuté = elegantné písmo webu (odporúčame). Zapnuté = vaše logo prekreslené do farieb webu. Súbory loga sú aj v img/site/brand/.'),
+  ]},
+  {'title': 'Údaje o podnikaní a spustenie webu', 'fields': [
     F('legal.name', 'Obchodné meno', default='Mária Fürsten – Fürsten Reality'),
-    F('legal.ico', 'IČO', default='', hint=TODO, todo=True),
-    F('legal.address', 'Miesto podnikania', default='', hint=TODO, todo=True),
-    F('legal.register', 'Zápis v registri', default='', hint='Napr. „Zapísaná v živnostenskom registri Okresného úradu Ilava, č. …“. ' + TODO, todo=True),
+    F('legal.ico', 'IČO', default='40380505', todo=True),
+    F('legal.vat', 'IČ DPH', default='SK1020072713'),
+    F('legal.address', 'Miesto podnikania', default='Centrum II 92/54-15, 018 41 Dubnica nad Váhom', todo=True),
+    F('legal.register', 'Zápis v registri', default='Fyzická osoba – podnikateľka zapísaná v živnostenskom registri'),
+    F('launch.domain', 'Vlastná doména webu', 'url', '', 'Napr. https://www.fursten-reality.sk – vyplní správca webu po nasmerovaní domény. ' + TODO, todo=True),
     F('legal.coop', 'Spolupráca', 'textarea', 'Pôsobím pod vlastnou značkou Fürsten Reality ako samostatná maklérka (živnostníčka) a spolupracujem s realitnou kanceláriou VAŠE REALITY s.r.o.'),
-    F('footer.text', 'Text v pätičke', 'textarea', 'Predaj, kúpa a prenájom nehnuteľností v Dubnici nad Váhom, Ilave, Trenčíne a okolí. Osobne, zrozumiteľne a s rešpektom k vášmu času.'),
+    F('footer.text', 'Text v pätičke', 'textarea', 'Predaj, kúpa a prenájom nehnuteľností v Púchove, Považskej Bystrici, Ilave, Dubnici nad Váhom, Trenčíne a v priľahlých obciach. Osobne, zrozumiteľne a s rešpektom k vášmu času.'),
   ]},
  ]},
 
  {'id': 'home', 'title': 'Úvodná stránka', 'icon': 'home', 'sections': [
   {'title': 'Vyhľadávače (SEO)', 'fields': [
-    F('home.seo_title', 'Titulok stránky', default='Mária Fürsten – realitná maklérka | Dubnica nad Váhom, Ilava, Trenčín'),
-    F('home.seo_desc', 'Popis pre Google', 'textarea', 'Predaj, kúpa a prenájom nehnuteľností v Dubnici nad Váhom, Ilave, Trenčíne a okolí. Mária Fürsten – Fürsten Reality, v spolupráci s VAŠE REALITY.'),
+    F('home.seo_title', 'Titulok stránky', default='Mária Fürsten – realitná maklérka | Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom, Trenčín'),
+    F('home.seo_desc', 'Popis pre Google', 'textarea', 'Predaj, kúpa a prenájom nehnuteľností v Púchove, Považskej Bystrici, Ilave, Dubnici nad Váhom, Trenčíne a v priľahlých obciach. Mária Fürsten – Fürsten Reality, v spolupráci s VAŠE REALITY.'),
   ]},
   {'title': 'Úvod (prvá obrazovka)', 'fields': [
-    F('home.hero_label', 'Štítok nad nadpisom', default='Realitná maklérka · Dubnica nad Váhom · Ilava · Trenčín'),
+    F('home.hero_label', 'Štítok nad nadpisom', default='Realitná maklérka · Púchov · Považská Bystrica · Ilava · Dubnica nad Váhom · Trenčín'),
     F('home.hero_title', 'Hlavný nadpis', 'md', 'Domov\nv dobrých *rukách*.', H1),
-    F('home.hero_sub', 'Text pod nadpisom', 'md', 'Som **Mária Fürsten**. Pomôžem vám predať nehnuteľnosť za férovú cenu alebo nájsť takú, ktorá bude naozaj vaša – v Dubnici nad Váhom, Ilave, Trenčíne a okolí.', MD),
+    F('home.hero_sub', 'Text pod nadpisom', 'md', 'Som **Mária Fürsten**. Pomôžem vám predať nehnuteľnosť za férovú cenu alebo nájsť takú, ktorá bude naozaj vaša – v Púchove, Považskej Bystrici, Ilave, Dubnici nad Váhom, Trenčíne a v priľahlých obciach.', MD),
     F('home.hero_image', 'Veľká fotka vpravo', 'image', 'img/nem/rodinny-dom-mikusovce/01.webp', 'Keď bude hotová vaša fotografia, môžete ju dať sem (na výšku).'),
     F('home.hero_caption', 'Popisok fotky', default='Rodinný dom so záhradou · Mikušovce'),
     F('home.cta_sell', 'Tlačidlo 1 – nadpis', default='Chcem predať nehnuteľnosť'),
@@ -100,13 +106,14 @@ SCHEMA = [
     F('about.label', 'Štítok', default='O mne'),
     F('about.title', 'Nadpis', 'md', 'Dobrý deň,\nsom *Mária*.', H1),
     F('about.text', 'Text', 'textarea',
-      'Realitám sa venujem v kraji, ktorý dobre poznám – od Dubnice nad Váhom cez Ilavu až po Trenčín. Viem, ktoré ulice sú tiché, kde sa rýchlo predávajú byty a čo kupujúcich pri dome zaujíma ako prvé.\n\n'
+      'Pochádzam z Púchovska a práve tam sa začali moje prvé obchody s nehnuteľnosťami. Tento kraj nepoznám len z máp a z portálov – poznám ho z každodenného života. Viem, kde sa dobre býva, ktoré ulice sú tiché, kde sa byty predávajú rýchlo a čo kupujúcich pri dome zaujíma ako prvé. A poznám aj ľudí, ktorí tu žijú.\n\n'
+      'Vďaka tomu, kde bývam, mám blízko do Púchova, Považskej Bystrice, Ilavy, Dubnice nad Váhom aj Trenčína. Na stretnutie či obhliadku preto prídem rýchlo – aj do priľahlých obcí.\n\n'
       'Pri každej nehnuteľnosti ma zaujíma aj to, čo je za ňou: prečo predávate, kedy sa chcete sťahovať, čo pre vás znamená dobrá cena. Až potom navrhnem postup. Na obhliadky chodím osobne a po každej vám dám vedieť, ako prebehla.\n\n'
       'Pracujem pod vlastnou značkou **Fürsten Reality** ako samostatná maklérka a spolupracujem s realitnou kanceláriou **VAŠE REALITY s.r.o.** Máte tak jedného človeka, ktorý sa o vás stará, a za ním zázemie kancelárie – zmluvy, právny servis a inzerciu na portáloch.',
-      'Text doplňte vlastnými slovami – čím dlhšie a osobnejšie, tým lepšie.'),
+      'Text doplňte vlastnými slovami – čím osobnejšie, tým lepšie.'),
     F('about.signature', 'Podpis', default='Mária Fürsten'),
     L('about.facts', 'Krátke fakty', [('title', 'Názov', 'text'), ('text', 'Hodnota', 'text')], [
-      {'title': 'Pôsobím', 'text': 'Dubnica nad Váhom, Ilava, Trenčín a okolie'},
+      {'title': 'Pôsobím', 'text': 'Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom, Trenčín a priľahlé obce'},
       {'title': 'Dohovoríme sa', 'text': 'po slovensky, česky aj po nemecky'},
       {'title': 'Spolupracujem s', 'text': 'VAŠE REALITY s.r.o.'}]),
   ]},
@@ -149,10 +156,10 @@ SCHEMA = [
 
  {'id': 'listing', 'title': 'Ponuka a detail', 'icon': 'grid', 'sections': [
   {'title': 'Stránka Ponuka', 'fields': [
-    F('offer.seo_title', 'Titulok stránky', default='Ponuka nehnuteľností – Dubnica nad Váhom, Ilava, Trenčín | Fürsten Reality'),
-    F('offer.seo_desc', 'Popis pre Google', 'textarea', 'Aktuálna ponuka bytov a domov na predaj a prenájom v Dubnici nad Váhom, Ilave, Trenčíne a okolí. Mária Fürsten – Fürsten Reality.'),
+    F('offer.seo_title', 'Titulok stránky', default='Ponuka nehnuteľností – Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom, Trenčín | Fürsten Reality'),
+    F('offer.seo_desc', 'Popis pre Google', 'textarea', 'Aktuálna ponuka bytov a domov na predaj a prenájom v Púchove, Považskej Bystrici, Ilave, Dubnici nad Váhom, Trenčíne a v priľahlých obciach. Mária Fürsten – Fürsten Reality.'),
     F('offer.title', 'Nadpis', 'md', 'Aktuálna *ponuka*', H1),
-    F('offer.lead', 'Text', 'md', 'Byty a domy na predaj a prenájom v Dubnici nad Váhom, Ilave, Trenčíne a okolí. Na každú nehnuteľnosť vás rada prevediem osobne.'),
+    F('offer.lead', 'Text', 'md', 'Byty a domy na predaj a prenájom od Púchova cez Považskú Bystricu, Ilavu a Dubnicu nad Váhom až po Trenčín – vrátane priľahlých obcí. Na každú nehnuteľnosť vás rada prevediem osobne.'),
     F('offer.sold_title', 'Nadpis sekcie predaných', 'md', 'Predané *a prenajaté*', MD),
     F('offer.empty', 'Text, keď filter nič nenájde', 'md', 'V tejto kategórii teraz nič nemám. Povedzte mi, čo hľadáte – ozvem sa, keď sa objaví vhodná ponuka.'),
   ]},
@@ -173,8 +180,8 @@ SCHEMA = [
 
  {'id': 'sell', 'title': 'Chcem predať', 'icon': 'key', 'sections': [
   {'title': 'Texty', 'fields': [
-    F('sell.seo_title', 'Titulok stránky', default='Chcem predať nehnuteľnosť – Dubnica nad Váhom, Ilava, Trenčín | Fürsten Reality'),
-    F('sell.seo_desc', 'Popis pre Google', 'textarea', 'Predávate byt, dom alebo pozemok v Dubnici nad Váhom, Ilave či Trenčíne? Napíšte mi pár údajov, ozvem sa a dohodneme nezáväzné stretnutie.'),
+    F('sell.seo_title', 'Titulok stránky', default='Chcem predať nehnuteľnosť – Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom, Trenčín | Fürsten Reality'),
+    F('sell.seo_desc', 'Popis pre Google', 'textarea', 'Predávate byt, dom alebo pozemok v Púchove, Považskej Bystrici, Ilave, Dubnici nad Váhom, Trenčíne či v okolitých obciach? Napíšte mi pár údajov, ozvem sa a dohodneme nezáväzné stretnutie.'),
     F('sell.title', 'Nadpis', 'md', 'Chcem predať\n*nehnuteľnosť*', H1),
     F('sell.lead', 'Text', 'md', 'Stačí pár údajov. Ozvem sa vám, prídem sa na nehnuteľnosť pozrieť a navrhnem reálnu cenu aj postup – nezáväzne.'),
     L('sell.points', 'Body vedľa formulára', [('title', 'Text', 'text')], [
@@ -186,8 +193,8 @@ SCHEMA = [
 
  {'id': 'search', 'title': 'Hľadám nehnuteľnosť', 'icon': 'search', 'sections': [
   {'title': 'Texty', 'fields': [
-    F('search.seo_title', 'Titulok stránky', default='Hľadám nehnuteľnosť – Dubnica nad Váhom, Ilava, Trenčín | Fürsten Reality'),
-    F('search.seo_desc', 'Popis pre Google', 'textarea', 'Hľadáte byt alebo dom v Dubnici nad Váhom, Ilave, Trenčíne a okolí? Povedzte mi, čo hľadáte, a dám vám vedieť, keď sa objaví vhodná ponuka.'),
+    F('search.seo_title', 'Titulok stránky', default='Hľadám nehnuteľnosť – Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom, Trenčín | Fürsten Reality'),
+    F('search.seo_desc', 'Popis pre Google', 'textarea', 'Hľadáte byt alebo dom v Púchove, Považskej Bystrici, Ilave, Dubnici nad Váhom, Trenčíne alebo v okolitých obciach? Povedzte mi, čo hľadáte, a dám vám vedieť, keď sa objaví vhodná ponuka.'),
     F('search.title', 'Nadpis', 'md', 'Hľadám\n*nehnuteľnosť*', H1),
     F('search.lead', 'Text', 'md', 'Napíšte mi, čo hľadáte – lokalitu, rozpočet a čo je pre vás dôležité. Ozvem sa, keď sa objaví nehnuteľnosť, ktorá vám bude sedieť, aj keď ešte nebude verejne inzerovaná.'),
     F('search.thanks', 'Poďakovanie po odoslaní', 'md', 'Ďakujem! Vaše požiadavky mám zapísané a *ozvem sa*, keď budem mať vhodnú ponuku.'),
@@ -196,7 +203,7 @@ SCHEMA = [
 
  {'id': 'contactpage', 'title': 'Stránka Kontakt', 'icon': 'mail', 'sections': [
   {'title': 'Texty', 'fields': [
-    F('contactpage.seo_title', 'Titulok stránky', default='Kontakt – Mária Fürsten, realitná maklérka | Dubnica nad Váhom, Ilava, Trenčín'),
+    F('contactpage.seo_title', 'Titulok stránky', default='Kontakt – Mária Fürsten, realitná maklérka | Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom, Trenčín'),
     F('contactpage.title', 'Nadpis', 'md', 'Ozvite sa,\n*rada pomôžem*.', H1),
     F('contactpage.thanks', 'Poďakovanie po odoslaní', 'md', 'Ďakujem za správu. *Ozvem sa vám* čo najskôr.'),
   ]},
@@ -204,7 +211,7 @@ SCHEMA = [
 
  {'id': 'privacy', 'title': 'Ochrana osobných údajov', 'icon': 'lock', 'sections': [
   {'title': 'Text stránky', 'fields': [
-    F('privacy.body', 'Text', 'textarea', GDPR, 'Riadok začínajúci „## “ je nadpis. Všetky miesta „[DOPLNIŤ …]“ treba pred spustením nahradiť skutočnými údajmi – na webe sú zatiaľ zvýraznené.', todo=True),
+    F('privacy.body', 'Text', 'textarea', GDPR, 'Riadok začínajúci „## “ je nadpis. Ak niekam napíšete „[DOPLNIŤ …]“, na webe sa to zvýrazní ako chýbajúci údaj.', todo=True),
   ]},
  ]},
 ]

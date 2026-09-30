@@ -10,3 +10,5 @@ _build/fonts/
 /version.json
 /admin/schema.json
 _build/screenshots/
+# podklady od klientky (osobné) – len lokálne
+_build/podklady/
