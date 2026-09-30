@@ -492,6 +492,8 @@ a.cb-line:hover span { color: var(--gold-d); }
   .menu-tel { font-size: 1.15rem; margin-top: 1rem; }
   .menu .btn { margin-top: .4rem; }
   body.menu-open .nav { background: var(--cream); }
+  /* backdrop-filter dělá z lišty obal pro fixed menu → menu by bylo jen 72 px vysoké a zbytek průhledný (Safari po scrollu) */
+  body.menu-open .nav, body.menu-open .nav.scrolled { backdrop-filter: none; -webkit-backdrop-filter: none; }
 }
 @media (max-width: 760px) {
   .foot-coop { padding-right: 0; }
