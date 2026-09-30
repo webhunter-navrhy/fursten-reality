@@ -389,7 +389,7 @@
   "short": "4-izbový byt 87 m²",
   "kind": "predaj",
   "type": "Byt",
-  "status": "aktualne",
+  "status": "predane",
   "locality": "Trenčianske Teplice",
   "address": "Ulica SNP, Trenčianske Teplice",
   "price": "149 990 €",
@@ -431,7 +431,7 @@
   "home": false,
   "hidden": false,
   "seo_desc": "",
-  "updated": "2026-09-30T12:00:00Z"
+  "updated": "2026-09-30T11:36:24.587Z"
  },
  {
   "id": "prenajom-2-izbovy-byt-trencin",
