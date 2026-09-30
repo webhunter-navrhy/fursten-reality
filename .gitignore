@@ -1,0 +1,11 @@
+.DS_Store
+__pycache__/
+# zdrojové podklady (stiahnuté z portálu, veľké) – len lokálne
+_build/raw/*
+!_build/raw/scraped.json
+_build/fonts/
+# generuje GitHub Action z _data/ (python _build/build.py)
+/*.html
+/nehnutelnosti/
+/version.json
+/admin/schema.json
