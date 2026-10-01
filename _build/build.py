@@ -182,7 +182,7 @@ def head(title, desc, r, img, path, ld=''):
 <link rel="apple-touch-icon" href="{r}img/site/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&family=Hanken+Grotesk:wght@400..650&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,360..400;1,6..72,360..400&family=Hanken+Grotesk:wght@400..500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{r}assets/css/style.css?v={_ver('assets/css/style.css')}">
 <script src="{r}assets/js/main.js?v={_ver('assets/js/main.js')}" defer></script>
 </head>'''
@@ -263,6 +263,7 @@ def nbsp_text(doc):
     for i in range(0, len(parts), 2):
         t = re.sub(r'(?<=\d) (?=\d{3}\b)', '\u00a0', parts[i])
         parts[i] = re.sub(r'(?<=\d) (?=(m²|€|izb|m\b|%))', '\u00a0', t)
+        parts[i] = re.sub(r'(?<!\w)([vszkaouiVSZKAOUI]) (?=\S)', '\\1\u00a0', parts[i])  # jednopísmenové predložky/spojky nezostanú na konci riadka
     return ''.join(parts)
 
 PAGES = []
@@ -371,7 +372,7 @@ def build_home():
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow fade" style="--d:.05s">{esc(T('home.hero_label'))}</p>
+      <p class="eyebrow fade" style="--d:.05s"><span>{'\u00a0· '.join(f'<span class="nw">{esc(x.strip())}</span>' for x in T('home.hero_label').split('·'))}</span></p>
       {heading(T('home.hero_title'), 'h1', 'hero-h')}
       <p class="hero-sub fade" style="--d:.45s">{md(T('home.hero_sub'))}</p>
       <div class="hero-ctas fade" style="--d:.6s">
@@ -700,6 +701,109 @@ def build_404():
     s = re.sub(r'href="(?!https?:|#|tel:|mailto:)([a-z][^"]*\.html[^"]*)"', lambda m: f'href="{BASE}{m.group(1)}"', s)
     open('404.html', 'w', encoding='utf-8').write(s)
 
+# ================================================================== NÁHĽAD LOGA (porovnanie pre klientku, noindex)
+def build_logo_preview():
+    variants = [
+        ('A', 'súčasné písmové logo', 'img/site/logo.svg', None,
+         'Logo vysadené písmom webu, s oblúkom, ktorý sa opakuje pri fotografiách. Pôsobí pokojne a je zladené s celým webom.'),
+        ('B', 'Vaše logo v pôvodných farbách', 'img/site/brand/fursten-logo-horizontal-original.svg', 'img/site/brand/fursten-logo-original.svg',
+         'Vaše logo z Facebooku, prekreslené do vektorov – ostré v každej veľkosti. Do hlavičky sa hodí jeho vodorovná verzia: domček s budovami a nápis FÜRSTEN REALITY, v pôvodnej modrej a červenej.'),
+        ('C', 'Vaše logo vo farbách webu', 'img/site/brand/fursten-logo-horizontal.svg', 'img/site/brand/fursten-logo-web.svg',
+         'To isté logo, len v tmavozelenej a zlatej. Zostane váš symbol aj nápis a zároveň ladí s ostatnými farbami stránky.'),
+    ]
+    menu = ''.join(f'<span class="nl">{t}</span>' for _, t in NAV)
+    def bar(src, w):
+        return (f'<div class="nav-in"><span class="brand"><img src="{src}" alt="" width="{w}" height="61"></span>'
+                f'<div class="menu">{menu}<span class="menu-tel">{PHONE}<span>{esc(TEL)}</span></span><span class="btn btn--sm">Chcem predať</span></div>'
+                f'<span class="burger" aria-hidden="true"><span></span><span></span></span></div>')
+    hero = ('<div class="lp-hero"><p class="eyebrow">Realitná maklérka · Fürsten Reality</p>'
+            '<p class="hero-h">Domov<br>v dobrých <em>rukách</em>.</p></div>')
+    blocks = ''
+    for k, (key, label, src, full, text) in enumerate(variants):
+        w = _svgw(src) if 'brand' in src else 210
+        full_html = f'<figure class="lp-full"><img src="{full}" alt="Celé logo – variant {key}" loading="lazy"><figcaption>Celé logo (Facebook, tlač)</figcaption></figure>' if full else ''
+        blocks += f'''
+<section class="lp-var" id="variant-{key.lower()}">
+  <div class="lp-head"><p class="eyebrow">Variant {key}</p><h2>Variant {key} – {label}</h2><p class="lp-text">{text}</p></div>
+  <p class="lp-cap">Počítač</p>
+  <div class="lp-desk" data-w="1280"><div class="lp-desk-in lp-d">{bar(src, w)}{hero}</div></div>
+  <div class="lp-row">
+    <div><p class="lp-cap">Mobil</p><div class="lp-phone lp-m">{bar(src, w)}{hero}</div></div>
+    {full_html}
+  </div>
+</section>'''
+    css = """<style>
+.lp-intro { padding: clamp(56px, 8vw, 110px) 0 clamp(16px, 3vw, 32px); }
+.lp-intro h1 { font-size: var(--fs-h1); }
+.lp-intro .lead { margin-top: 1.4rem; max-width: 52ch; }
+.lp-jump { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
+.lp-jump a { min-height: 42px; display: inline-flex; align-items: center; padding: 0 1.1rem; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); font-weight: var(--fw-m); font-size: .92rem; }
+.lp-var { padding: clamp(48px, 6vw, 88px) 0; border-top: 1px solid var(--line); }
+.lp-head { max-width: 46rem; margin-bottom: 2rem; }
+.lp-head h2 { font-size: clamp(1.7rem, 2.6vw, 2.3rem); }
+.lp-head .eyebrow { margin-bottom: .9rem; }
+.lp-text { margin-top: .9rem; color: var(--muted); }
+.lp-cap { font-size: var(--fs-label); font-weight: var(--fw-m); letter-spacing: .16em; text-transform: uppercase; color: var(--soft); margin: 0 0 .7rem; }
+.lp-desk { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: var(--cream); box-shadow: var(--shadow); }
+.lp-desk-in { width: 1280px; transform-origin: 0 0; background: var(--cream); }
+.lp-row { display: flex; flex-wrap: wrap; gap: 2rem 3rem; align-items: flex-start; margin-top: 2.4rem; }
+.lp-row > div { flex: 0 1 390px; min-width: 0; }
+.lp-phone { width: 100%; max-width: 390px; height: 300px; overflow: hidden; border-radius: 34px; border: 1px solid var(--line); background: var(--cream); box-shadow: var(--shadow); }
+.lp-full { margin: 0; width: 220px; }
+.lp-full img { width: 100%; height: auto; background: #fff; border-radius: 14px; border: 1px solid var(--line-2); padding: 16px; }
+.lp-full figcaption { font-size: .84rem; color: var(--muted); margin-top: .6rem; }
+.lp-row .lp-full { margin-top: 1.6rem; }
+/* mock headers: always the real desktop / mobile look regardless of the viewer's screen */
+.lp-d .nav-in, .lp-m .nav-in { max-width: none; margin: 0; }
+.lp-d .nav-in { height: 88px; padding: 0 48px; }
+.lp-d .menu { display: flex; position: static; flex-direction: row; align-items: center; gap: 2rem; padding: 0; opacity: 1; visibility: visible; background: none; }
+.lp-d .nl { font-family: var(--sans); font-size: .95rem; font-weight: var(--fw-m); }
+.lp-d .menu-tel span { display: inline; }
+.lp-d .menu-tel { font-size: .95rem; margin: 0; }
+.lp-d .menu .btn { margin: 0; }
+.lp-d .burger { display: none; }
+.lp-d .brand img { height: 50px; }
+.lp-d .lp-hero { padding: 60px 48px 44px; }
+.lp-d .hero-h { font-size: 88px; }
+.lp-m .nav-in { height: 72px; padding: 0 16px; }
+.lp-m .menu { display: none; }
+.lp-m .burger { display: block; }
+.lp-m .brand img { height: 40px; }
+.lp-m .lp-hero { padding: 36px 16px 0; }
+.lp-m .eyebrow { font-size: .68rem; letter-spacing: .14em; }
+.lp-m .hero-h { font-size: 45px; }
+.lp-hero .hero-h { font-family: var(--serif); font-weight: var(--fw-d); margin: 0; }
+.lp-hero .hero-h em { font-style: normal; color: var(--gold-d); }
+.lp-note { padding: 32px 0 80px; color: var(--muted); font-size: .92rem; border-top: 1px solid var(--line); }
+@media (max-width: 760px) { body { padding-bottom: 0; } .lp-full { width: 160px; } .lp-row .lp-full { margin-top: 0; } }
+</style>"""
+    js = """<script>
+(() => { const fit = () => document.querySelectorAll('.lp-desk').forEach((d) => {
+  const i = d.firstElementChild, k = Math.min(1, d.clientWidth / 1280); i.style.transform = `scale(${k})`; d.style.height = (i.offsetHeight * k) + 'px'; });
+  fit(); addEventListener('resize', fit); document.fonts && document.fonts.ready.then(fit); })();
+</script>"""
+    jump = ''.join(f'<a href="#variant-{v[0].lower()}">Variant {v[0]}</a>' for v in variants)
+    doc = (head('Náhľad loga – Fürsten Reality', 'Porovnanie variantov loga v hlavičke webu.', '', 'img/site/og.jpg', 'logo-nahlad.html')
+           .replace('<head>', '<head>\n<meta name="robots" content="noindex, nofollow">', 1).replace('</head>', css + '\n</head>')
+           + f'''
+<body>
+<main id="obsah">
+<section class="lp-intro"><div class="wrap">
+  <p class="eyebrow">Fürsten Reality · pracovný náhľad</p>
+  <h1>Náhľad loga v hlavičke webu</h1>
+  <p class="lead">Takto by vyzerala horná lišta webu s jednotlivými logami – na počítači aj na mobile. Stačí nám napísať, ktorý variant sa vám páči.</p>
+  <div class="lp-jump">{jump}</div>
+</div></section>
+<div class="wrap">{blocks}
+  <p class="lp-note">Pracovná stránka len na porovnanie – vo vyhľadávačoch sa nezobrazuje. <a class="u" href="index.html">Späť na web</a></p>
+</div>
+</main>
+{js}
+</body>
+</html>
+''')
+    open('logo-nahlad.html', 'w', encoding='utf-8').write(nbsp_text(doc)); PAGES.append('logo-nahlad.html')
+
 def build_admin_assets():
     json.dump({'schema': SCHEMA}, open('admin/schema.json', 'w', encoding='utf-8'), ensure_ascii=False)
     json.dump({'sha': os.environ.get('GITHUB_SHA', 'local'), 'built': date.today().isoformat()}, open('version.json', 'w'))
@@ -709,6 +813,6 @@ def build_admin_assets():
     open('admin/index.html', 'w', encoding='utf-8').write(ai)
 
 if __name__ == '__main__':
-    build_home(); build_offer(); build_details(); build_sell(); build_search(); build_contact(); build_privacy(); build_404()
+    build_home(); build_offer(); build_details(); build_sell(); build_search(); build_contact(); build_privacy(); build_404(); build_logo_preview()
     build_admin_assets()
     print(f'{len(PAGES)} stránok vygenerovaných')

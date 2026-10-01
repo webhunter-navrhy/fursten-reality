@@ -4,6 +4,7 @@ Výstup: img/site/brand/*.svg — text prevedený na krivky (Montserrat, OFL), �
   fursten-logo-original.svg   pôvodné farby (modrá/červená) – pre Facebook, tlač
   fursten-logo-web.svg        farby webu (tmavozelená/šampanská zlatá)
   fursten-logo-horizontal.svg / -light.svg   vodorovná verzia do hlavičky / na tmavé pozadie
+  fursten-logo-horizontal-original.svg       vodorovná verzia v pôvodných farbách (porovnanie v logo-nahlad.html)
 Spustenie (lokálne, potrebuje fontTools): python _build/tools/logo_brand.py"""
 import os
 from fontTools.ttLib import TTFont
@@ -111,5 +112,6 @@ GREEN, GOLD, CREAM, GOLD_L = '#1F3B34', '#B08D55', '#F3EEE2', '#CDB07E'
 full_logo(BLUE, RED, 'fursten-logo-original.svg')
 full_logo(GREEN, GOLD, 'fursten-logo-web.svg')
 horizontal(GREEN, GOLD, GREEN, 'fursten-logo-horizontal.svg')
+horizontal(BLUE, RED, BLUE, 'fursten-logo-horizontal-original.svg')   # len pre porovnanie v logo-nahlad.html
 horizontal(CREAM, GOLD_L, CREAM, 'fursten-logo-horizontal-light.svg')
 print(sorted(os.listdir(OUT)))

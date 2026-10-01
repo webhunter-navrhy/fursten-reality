@@ -3,7 +3,7 @@
 Stránka -> sekcie -> polia:
   F(key, label, kind, default, hint)          kinds: text | md | textarea | image | url | bool
   L(key, label, item_fields, default, title)  opakovateľný zoznam (item_fields = [(name, label, kind)])
-md:        *kurzíva v zlatej*, **tučné**, nový riadok = zalomenie
+md:        *zvýraznenie zlatou farbou*, **tučné**, nový riadok = zalomenie
 textarea:  odseky oddelené prázdnym riadkom
 Hodnota „[DOPLNIŤ …]“ = údaj, ktorý treba doplniť pred spustením (admin ho zvýrazní v prehľade).
 """
@@ -15,7 +15,7 @@ def L(key, label, fields, default, title='title', hint=''):
     return {'key': key, 'label': label, 'kind': 'list', 'fields': [{'name': n, 'label': l, 'kind': k} for n, l, k in fields],
             'default': default, 'title': title, 'hint': hint}
 
-MD = 'Slovo v *hviezdičkách* sa zvýrazní zlatou kurzívou, **dve hviezdičky** = tučne.'
+MD = 'Slovo v *hviezdičkách* sa zvýrazní zlatou farbou, **dve hviezdičky** = tučne.'
 H1 = 'Nový riadok nadpisu = Enter. Slovo v *hviezdičkách* sa zvýrazní.'
 TODO = 'Doplniť pred spustením webu.'
 
@@ -106,16 +106,15 @@ SCHEMA = [
     F('about.label', 'Štítok', default='O mne'),
     F('about.title', 'Nadpis', 'md', 'Dobrý deň,\nsom *Mária*.', H1),
     F('about.text', 'Text', 'textarea',
-      'Pochádzam z Púchovska a práve tam sa začali moje prvé obchody s nehnuteľnosťami. Tento kraj nepoznám len z máp a z portálov – poznám ho z každodenného života. Viem, kde sa dobre býva, ktoré ulice sú tiché, kde sa byty predávajú rýchlo a čo kupujúcich pri dome zaujíma ako prvé. A poznám aj ľudí, ktorí tu žijú.\n\n'
-      'Vďaka tomu, kde bývam, mám blízko do Púchova, Považskej Bystrice, Ilavy, Dubnice nad Váhom aj Trenčína. Na stretnutie či obhliadku preto prídem rýchlo – aj do priľahlých obcí.\n\n'
+      'Pochádzam z okolia Púchova a momentálne žijem v Dubnici nad Váhom. Tento kraj nepoznám len z máp a realitných portálov – poznám ho z každodenného života. Viem, kde sa dobre býva, kde sa byty rýchlo predávajú a čo kupujúcich pri dome zaujíma ako prvé. A poznám aj ľudí, ktorí tu žijú.\n\n'
+      'Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom aj Trenčín sú mi blízke. Na osobné stretnutie či obhliadku preto viem prísť rýchlo – do miest aj priľahlých obcí.\n\n'
       'Pri každej nehnuteľnosti ma zaujíma aj to, čo je za ňou: prečo predávate, kedy sa chcete sťahovať, čo pre vás znamená dobrá cena. Až potom navrhnem postup. Na obhliadky chodím osobne a po každej vám dám vedieť, ako prebehla.\n\n'
       'Pracujem pod vlastnou značkou **Fürsten Reality** ako samostatná maklérka a spolupracujem s realitnou kanceláriou **VAŠE REALITY s.r.o.** Máte tak jedného človeka, ktorý sa o vás stará, a za ním zázemie kancelárie – zmluvy, právny servis a inzerciu na portáloch.',
       'Text doplňte vlastnými slovami – čím osobnejšie, tým lepšie.'),
     F('about.signature', 'Podpis', default='Mária Fürsten'),
     L('about.facts', 'Krátke fakty', [('title', 'Názov', 'text'), ('text', 'Hodnota', 'text')], [
-      {'title': 'Pôsobím', 'text': 'Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom, Trenčín a priľahlé obce'},
-      {'title': 'Dohovoríme sa', 'text': 'po slovensky, česky aj po nemecky'},
-      {'title': 'Spolupracujem s', 'text': 'VAŠE REALITY s.r.o.'}]),
+      {'title': 'Dohovoríme sa', 'text': 'po slovensky, česky aj po nemecky'}],
+      hint='Len údaje, ktoré už nie sú v texte vyššie (mestá a spolupráca s VAŠE REALITY sú v texte).'),
   ]},
   {'title': 'Služby', 'fields': [
     F('services.label', 'Štítok', default='S čím pomôžem'),
