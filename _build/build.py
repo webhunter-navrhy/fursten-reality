@@ -29,6 +29,8 @@ OWN = bool(S.get('brand.own_logo'))
 LOGO = 'img/site/brand/fursten-logo-horizontal.svg' if OWN else 'img/site/logo.svg'
 LOGO_L = 'img/site/brand/fursten-logo-horizontal-light.svg' if OWN else 'img/site/logo-light.svg'
 LOGO_W = _svgw(LOGO) if OWN else 210
+FAVICON = 'img/site/brand/fursten-mark.svg' if OWN else 'img/site/mark.svg'
+TOUCH_ICON = 'img/site/brand/apple-touch-icon.png' if OWN else 'img/site/apple-touch-icon.png'
 NAME = T('contact.name'); TEL = T('contact.phone'); TEL_H = 'tel:' + re.sub(r'[^\d+]', '', TEL); MAIL = T('contact.email')
 PHOTO = T('about.photo'); PHOTO_S = T('about.photo_small') or PHOTO
 
@@ -178,8 +180,8 @@ def head(title, desc, r, img, path, ld=''):
 <meta property="og:type" content="website">
 <meta property="og:locale" content="sk_SK">
 <link rel="canonical" href="{BASE}{path}">{ld}
-<link rel="icon" href="{r}img/site/mark.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="{r}img/site/apple-touch-icon.png">
+<link rel="icon" href="{r}{FAVICON}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{r}{TOUCH_ICON}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,360..400;1,6..72,360..400&family=Hanken+Grotesk:wght@400..500&display=swap" rel="stylesheet">
@@ -278,7 +280,7 @@ def write(path, title, desc, body, active='', img='img/site/og.jpg', ld='', seco
 
 LD_AGENT = '\n<script type="application/ld+json">' + json.dumps({
     '@context': 'https://schema.org', '@type': 'RealEstateAgent', 'name': 'Fürsten Reality – Mária Fürsten', 'url': BASE,
-    'logo': BASE + 'img/site/logo.svg', 'image': BASE + 'img/site/og.jpg', 'telephone': re.sub(r'[^\d+]', '', TEL), 'email': MAIL,
+    'logo': BASE + LOGO, 'image': BASE + 'img/site/og.jpg', 'telephone': re.sub(r'[^\d+]', '', TEL), 'email': MAIL,
     'areaServed': ['Púchov', 'Považská Bystrica', 'Ilava', 'Dubnica nad Váhom', 'Trenčín', 'Nová Dubnica', 'Trenčianske Teplice'],
     'taxID': T('legal.vat'), 'vatID': T('legal.vat'),
     'knowsLanguage': ['sk', 'cs', 'de'], 'founder': {'@type': 'Person', 'name': NAME, 'jobTitle': 'realitná maklérka'},
@@ -317,7 +319,7 @@ def form(kind, fields, submit, thanks, listing=None, cls=''):
 
 # ------------------------------------------------------------------ sections
 def contact_section(title=None, text=None, anchor='kontakt', show_head=True):
-    fields = f_chips('Téma', 'S čím vám môžem pomôcť?', ['Predaj', 'Kúpa', 'Prenájom', 'Iné']) + f_contact('Správa', 'Napíšte pár viet – o akú nehnuteľnosť ide, kde sa nachádza, čo potrebujete…')
+    fields = f_chips('Téma', 'S čím Vám môžem pomôcť?', ['Predaj', 'Kúpa', 'Prenájom', 'Iné']) + f_contact('Správa', 'Napíšte pár viet – o akú nehnuteľnosť ide, kde sa nachádza, čo potrebujete…')
     return f'''<section class="sec contact" id="{anchor}">
   <div class="wrap contact-grid">
     <div class="contact-side">
@@ -520,7 +522,7 @@ def build_details():
         sec_map = (f'<section class="dsec rv" id="lokalita"><h2>Lokalita</h2><p class="muted">{PIN} {esc(x.get("address") or x.get("locality") or "")} · poloha je orientačná</p>'
                    f'<div class="map" data-map="https://maps.google.com/maps?q={urllib.parse.quote(mapq)}&z=14&output=embed"><button class="btn btn--ghost btn--sm" type="button">{MAPI}<span>Zobraziť mapu</span></button></div></section>') if mapq else ''
         msg = f'Dobrý deň, mám záujem o obhliadku nehnuteľnosti „{x["title"]}“ (ID {x.get("ref") or x["slug"]}). '
-        fields = f_contact('Správa', '', msg) + f_in('Termín', 'Kedy by vám obhliadka vyhovovala?', ph='napr. v týždni poobede, v sobotu dopoludnia', full=True)
+        fields = f_contact('Správa', '', msg) + f_in('Termín', 'Kedy by Vám obhliadka vyhovovala?', ph='napr. v týždni poobede, v sobotu dopoludnia', full=True)
         others = [o for o in ACTIVE if o is not x]
         others = sorted(others, key=lambda o: (o.get('type') != x.get('type'), o.get('kind') != x.get('kind')))[:3]
         done_note = f'<p class="done-note">{lab} – nehnuteľnosť už má nového {"majiteľa" if key == "predane" else "nájomcu"}. Hľadáte podobnú? <a class="u" href="@/hladam.html">Napíšte mi</a>.</p>' if kind == 'done' else ''
@@ -572,7 +574,7 @@ def build_details():
       <section class="dsec dform" id="obhliadka">
         <h2 class="rv">{md(T('detail.form_title'))}</h2>
         <p class="muted rv">Nehnuteľnosť: <b>{esc(x['title'])}</b> · ID {esc(x.get('ref') or x['slug'])}</p>
-        <div class="rv">{form('obhliadka', fields, T('detail.btn'), 'Ďakujem, *ozvem sa vám* a dohodneme termín obhliadky.', x)}</div>
+        <div class="rv">{form('obhliadka', fields, T('detail.btn'), 'Ďakujem, *ozvem sa Vám* a dohodneme termín obhliadky.', x)}</div>
       </section>
     </div>
     <aside class="dside">
@@ -583,7 +585,7 @@ def build_details():
 </article>
 <section class="sec more">
   <div class="wrap">
-    <div class="sec-head"><div><p class="eyebrow rv">Mohlo by vás zaujímať</p><h2 class="rv">Ďalšie <em>nehnuteľnosti</em></h2></div><a class="lnk rv" href="@/ponuka.html">Celá ponuka {ARR}</a></div>
+    <div class="sec-head"><div><p class="eyebrow rv">Mohlo by Vás zaujímať</p><h2 class="rv">Ďalšie <em>nehnuteľnosti</em></h2></div><a class="lnk rv" href="@/ponuka.html">Celá ponuka {ARR}</a></div>
     <div class="lgrid">{''.join(card(o, k) for k, o in enumerate(others))}</div>
   </div>
 </section>
@@ -639,7 +641,7 @@ def build_search():
               + f_chips('Typ', 'Čo hľadáte?', ['Byt', 'Rodinný dom', 'Pozemok', 'Chata / chalupa'], multi=True)
               + f_in('Lokalita', 'Lokalita', ph='napr. Púchov, Ilava, Dubnica, Trenčín a okolie', full=True)
               + f_in('Rozpočet', 'Rozpočet do', ph='napr. 180 000 €', mode='text') + f_in('Izby', 'Počet izieb / plocha', ph='napr. 3 izby, od 70 m²')
-              + f_contact('Čo je pre vás dôležité', 'Záhrada, parkovanie, škola nablízku, termín sťahovania…'))
+              + f_contact('Čo je pre Vás dôležité', 'Záhrada, parkovanie, škola nablízku, termín sťahovania…'))
     latest = ''.join(card(x, k) for k, x in enumerate(ACTIVE[:3]))
     body = f'''
 <section class="phero phero--form">

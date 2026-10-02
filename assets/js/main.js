@@ -127,7 +127,7 @@
       req('[name="Meno"]', (el) => el.value.trim().length > 1, 'Vyplňte prosím meno.');
       $$('.fld input[required]:not([name="Meno"]), .fld textarea[required]', f).forEach((el) => { if (!el.value.trim()) { el.closest('.fld').classList.add('bad'); bad = bad || [el, 'Vyplňte prosím označené polia.']; } });
       const tel = $('[name="Telefón"]', f), mail = $('[name="E-mail"]', f);
-      if (tel && mail && !tel.value.trim() && !mail.value.trim()) { tel.closest('.fld').classList.add('bad'); mail.closest('.fld').classList.add('bad'); bad = bad || [tel, 'Nechajte mi prosím telefón alebo e-mail, aby som vám mohla odpovedať.']; }
+      if (tel && mail && !tel.value.trim() && !mail.value.trim()) { tel.closest('.fld').classList.add('bad'); mail.closest('.fld').classList.add('bad'); bad = bad || [tel, 'Nechajte mi prosím telefón alebo e-mail, aby som Vám mohla odpovedať.']; }
       if (mail && mail.value.trim() && !/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(mail.value.trim())) { mail.closest('.fld').classList.add('bad'); bad = bad || [mail, 'E-mailová adresa nevyzerá správne.']; }
       req('[name="Súhlas"]', (el) => el.checked, 'Pre odoslanie prosím potvrďte súhlas so spracovaním údajov.');
       if (bad) { err.textContent = bad[1]; bad[0].focus({ preventScroll: false }); return; }

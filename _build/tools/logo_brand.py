@@ -5,6 +5,7 @@ Výstup: img/site/brand/*.svg — text prevedený na krivky (Montserrat, OFL), �
   fursten-logo-web.svg        farby webu (tmavozelená/šampanská zlatá)
   fursten-logo-horizontal.svg / -light.svg   vodorovná verzia do hlavičky / na tmavé pozadie
   fursten-logo-horizontal-original.svg       vodorovná verzia v pôvodných farbách (porovnanie v logo-nahlad.html)
+  fursten-mark.svg            favicon – motív domčeka (python _build/tools/logo_brand.py --favicon)
 Spustenie (lokálne, potrebuje fontTools): python _build/tools/logo_brand.py"""
 import os
 from fontTools.ttLib import TTFont
@@ -107,11 +108,23 @@ def horizontal(A, B, T, name):
            f'<path d="{d}" fill="{T}"/>{uml}<path d="{r}" fill="{B}"/></svg>')
     open(os.path.join(OUT, name), 'w').write(svg)
 
+def favicon(A, B, BG, name):
+    """motív domčeka (strecha + budovy) na tmavozelenom štvorci — favicon / ikona aplikácie"""
+    s = 50 / 650; tx = 7 - 300 * s; ty = (64 - 535 * s) / 2 - 85 * s
+    m = mark(A, B).replace('M88 607H322', 'M300 607H322').replace('M928 607H1163', 'M928 607H950')
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="{BG}"/>'
+           f'<g transform="translate({tx:.2f} {ty:.2f}) scale({s:.5f})">{m}</g></svg>')
+    open(os.path.join(OUT, name), 'w').write(svg)
+
 BLUE, RED = '#0B3F94', '#D2141C'
 GREEN, GOLD, CREAM, GOLD_L = '#1F3B34', '#B08D55', '#F3EEE2', '#CDB07E'
-full_logo(BLUE, RED, 'fursten-logo-original.svg')
-full_logo(GREEN, GOLD, 'fursten-logo-web.svg')
-horizontal(GREEN, GOLD, GREEN, 'fursten-logo-horizontal.svg')
-horizontal(BLUE, RED, BLUE, 'fursten-logo-horizontal-original.svg')   # len pre porovnanie v logo-nahlad.html
-horizontal(CREAM, GOLD_L, CREAM, 'fursten-logo-horizontal-light.svg')
-print(sorted(os.listdir(OUT)))
+if __name__ == '__main__':
+    import sys
+    if '--favicon' not in sys.argv:   # --favicon = len ikona, ostatné súbory loga sa nemenia
+        full_logo(BLUE, RED, 'fursten-logo-original.svg')
+        full_logo(GREEN, GOLD, 'fursten-logo-web.svg')
+        horizontal(GREEN, GOLD, GREEN, 'fursten-logo-horizontal.svg')
+        horizontal(BLUE, RED, BLUE, 'fursten-logo-horizontal-original.svg')   # len pre porovnanie v logo-nahlad.html
+        horizontal(CREAM, GOLD_L, CREAM, 'fursten-logo-horizontal-light.svg')
+    favicon(CREAM, GOLD_L, GREEN, 'fursten-mark.svg')
+    print(sorted(os.listdir(OUT)))
