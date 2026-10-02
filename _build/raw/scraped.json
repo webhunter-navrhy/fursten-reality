@@ -1,5 +1,460 @@
 [
  {
+  "id": "2559",
+  "url": "https://www.vasereality.sk/nehnutelnost/2559-rekreacna-2-podlazna-chata-v-obci-cavoj-krpelance",
+  "name": "Rekreačná 2 podlažná chata v obci Čavoj-Krpelance",
+  "category": "Predaj / Chata",
+  "description": "EXKLUZÍVNE | Chalupa na lazoch s nádhernými výhľadmi pod lesom – Čavoj, osada Krpelance.\n\nPredstavte si miesto, kde vás ráno budí spev vtákov, kde si večer vychutnáte praskanie ohňa v kachliach a kde namiesto ruchu mesta počujete len šum lesa a pokoj okolitej prírody.\n\nVAŠE REALITY s.r.o. Vám v exkluzívnom zastúpení ponúka na predaj útulnú rekreačnú chalupu v obľúbenej lazníckej oblasti obce Čavoj, časť Krpelance. Nachádza sa na odľahlom mieste v krásnom horskom prostredí, obklopená prírodou a niekoľkými susednými chalupami využívanými prevažne na víkendový oddych.\n\nTáto murovaná chalupa je napojená na elektrinu a &nbsp;vodovod. Ponúka tri podlažia s celkovou dispozíciou, ktorá poskytuje dostatok priestoru pre rodinné rekreovanie aj pobyty s priateľmi.\n\nDispozícia chalupy\n\nPrízemie\n\nvstupná chodba\nkúpeľňa so sprchovacím kútom\nsamostatné WC so splachovaním\nhosťovská kuchyňa\nspálňa\n\n1. nadzemné podlažie\n\npriestranná obývacia miestnosť\nkrbové kachle vykurujúce aj podkrovie\nkuchynský kút s tečúcou vodou\nelektrický varič\ntradičné kachle vhodné na kúrenie, varenie aj pečenie\n\nPodkrovie\n\ntri miestnosti\njedna priechodná izba\njedna dokončená izba\njedna miestnosť využívaná ako sklad, pripravená na dokončenie podľa vlastných predstáv\n\nPríjemným bonusom sú balkóny na hornom podlaží a vonkajší balkónový chodník, ktorý umožňuje vstup do chalupy z dvoch úrovní pozemku.\n\nPozemok\npozemok pri chalube: 552 m²\nspoluvlastnícky podiel na spoločnom dvore: 1/2 z výmery 480 m²,spojený dvojitou stenou so zrkadlovo otočenou susednou chalupou.\n\nPozemok je svahovitý, typický pre horské lazy, a ponúka nádherné panoramatické výhľady na okolité kopce a lesy.\n\nMiesto, ktoré si zamilujete\n\nNajväčšou hodnotou tejto nehnuteľnosti je jej poloha. Nachádza sa pod lesom v pokojnom prostredí, ktoré ocenia milovníci prírody, turistiky, cykloturistiky, hubárčenia a všetci, ktorí túžia uniknúť od každodenného stresu.\n\nV blízkom okolí sa nachádza:\n\nlyžiarske stredisko Homôlka\nturistické a cyklistické trasy Strážovských vrchov\nobec Valaská Belá\nkúpeľné a historické mesto Bojnice\nDôležitá informácia\n\nPrístup k nehnuteľnosti vedie približne 2 km po kamenistej lesnej ceste s miestami nerovným povrchom. Pre komfortný celoročný prístup odporúčame vozidlo s vyšším podvozkom alebo SUV.\n\nAk hľadáte miesto, kde budete môcť vypnúť telefón, nadýchnuť sa čistého horského vzduchu a užívať si pokoj ďaleko od ruchu civilizácie, táto chalupa môže byť presne tým, čo hľadáte.\n\nCena: 55 500 €\n\nKontakt:\nMária Fürsten\nVAŠE REALITY s.r.o.\nTel.: 0904 808 521\nE-mail: fursten@vasereality.sk\n\nPri kontaktovaní e-mailom Vás prosíme o uvedenie telefonického kontaktu.\n\nID zákazky: 924596\n\nNa osobnú obhliadku sa teší tím VAŠE REALITY s.r.o., člen Realitnej únie Slovenskej republiky.",
+  "images": [
+   "https://www.vasereality.sk/imgcache/-69b7b981dc4d2bbd5404c2ae.jpg",
+   "https://www.vasereality.sk/imgcache/-6a2c1276414faf20cd0ecc8f.png",
+   "https://www.vasereality.sk/imgcache/-69b7b97ddc4d2bbd5404c2a7.jpg",
+   "https://www.vasereality.sk/imgcache/-69b7b97edc4d2bbd5404c2a9.jpg",
+   "https://www.vasereality.sk/imgcache/-69b7b97fdc4d2bbd5404c2aa.jpg",
+   "https://www.vasereality.sk/imgcache/-69b7b980dc4d2bbd5404c2ab.jpg",
+   "https://www.vasereality.sk/imgcache/-69b7b980dc4d2bbd5404c2ac.jpg",
+   "https://www.vasereality.sk/imgcache/-69b7b981dc4d2bbd5404c2ad.jpg",
+   "https://www.vasereality.sk/imgcache/-69b7b982dc4d2bbd5404c2af.jpg",
+   "https://www.vasereality.sk/imgcache/-69b7b982dc4d2bbd5404c2b0.jpg",
+   "https://www.vasereality.sk/imgcache/-6a2c134073ac74ee920912aa.png",
+   "https://www.vasereality.sk/imgcache/-6a2c13aa76f2104d530b2526.png"
+  ],
+  "address": {
+   "@type": "PostalAddress",
+   "addressLocality": "Čavoj",
+   "postalCode": "97229",
+   "addressCountry": "SK"
+  },
+  "geo": {
+   "@type": "GeoCoordinates",
+   "latitude": 48.7411522,
+   "longitude": 19.4528646
+  },
+  "price": 55500,
+  "currency": "EUR",
+  "availability": "https://schema.org/InStock",
+  "features": [
+   [
+    "Status",
+    "aktívne"
+   ],
+   [
+    "Vlastníctvo",
+    "osobné"
+   ],
+   [
+    "Plocha pozemku",
+    "858 m²"
+   ],
+   [
+    "Úžitková plocha",
+    "100 m²"
+   ],
+   [
+    "Zastavaná plocha",
+    "44 m²"
+   ],
+   [
+    "Stav",
+    "čiastočne prerobený"
+   ],
+   [
+    "Počet izieb",
+    "5"
+   ],
+   [
+    "Energetický certifikát",
+    "žiadne"
+   ],
+   [
+    "Pivnica",
+    "áno"
+   ],
+   [
+    "Verejné vonkajšie parkovanie",
+    "áno"
+   ],
+   [
+    "Rok výstavby",
+    "2006"
+   ],
+   [
+    "Celková plocha",
+    "132 m²"
+   ],
+   [
+    "Inžinierske siete",
+    "áno"
+   ],
+   [
+    "Voda",
+    "áno"
+   ],
+   [
+    "Elektrika",
+    "áno"
+   ],
+   [
+    "Kanalizácia",
+    "áno"
+   ],
+   [
+    "Voda - na pozemku - vodný zdroj",
+    "áno"
+   ],
+   [
+    "Kanalizácia - na pozemku - septik",
+    "áno"
+   ],
+   [
+    "Vykurovanie - lokálne",
+    "áno"
+   ]
+  ],
+  "iframes": []
+ },
+ {
+  "id": "2562",
+  "url": "https://www.vasereality.sk/nehnutelnost/2562-velky-rekreacny-pozemok-v-obci-zubak-3611-m2",
+  "name": "Veľký rekreačný pozemok v obci Zubák,  3611 m2",
+  "category": "Predaj / Pozemok na rekreáciu",
+  "description": "EXKLUZÍVNA PONUKA - VAŠE REALITY - realitná kancelária Vám ponúka na predaj pozemok s výmerou 3611m2, určený na výstavbu rekreačných chát. Nachádza sa v časti obce Zubák. Rozmer pozemku 97 m dlžka a 41 m šírka. Táto lokalita ponúka budúcemu majiteľovi maximálny kľud. Zamilujú si ju predovšetkým milovníci prírody, ktorí túžia počas víkendov stráviť čas mimo mesta – využiť možnosti, ktoré daná lokalita ponúka za účelom relaxu na vidieku, turistiky alebo pre tých, ktorí sa rozhodli žiť na dedine . IS elektrika v blízkosti pozemku, voda vlastná studňou, plyn nie, kanalizácia nie, cesta obecná spevnená. Vstup na pozemok priamo z obecnej cesty.\n\nJe tu taktiež množstvo možností využitia danej polohy pozemku pre milovníkov turistiky, cykloturistiky, lyžovania, hubárčenia. V okolí obce Zubák v rozsahu približne 5 km sa nachádza hrad Lednica krásne prostredie. V blízkej obci Lednické Rovné je kompletná občianska vybavenosť – cukráreň, bar, reštaurácie, Tesco, ZŠ, MŠ, lekár , kostol, pošta, kultúrny dom, kino, banka, autobusová stanica. Napojenie na diaľnicu smer BA/Žilina je približne 20 km od pozemku.\n\nV blízkosti pozemku sa nachádza miesto možného pripojenia na elektrinu (cca 20 m od najbližšej hranice pozemku).\n\n\nV prípade záujmu o menšiu časť pozemku je možná dohoda o veľkosti a cene pozemku.\nV prípade záujmu o bližšie informácie technického charakteru Vám poskytneme priamo v RK.\n\nV prípade záujmu poskytujeme bezplatné poradenstvo pri výbere HU a zabezpečujeme financovanie kúpy pozemkov spolu s poistením osôb a majetku. Spolupracujeme so všetkými bankami a poisťovňami v SR.\n\nKontakt: Mária Fursten, tel.: 0904 808 521, mail: fursten@vasereality.sk",
+  "images": [
+   "https://www.vasereality.sk/imgcache/-69b7b987dc4d2bbd5404c2b6.jpg",
+   "https://www.vasereality.sk/imgcache/-69b7b988dc4d2bbd5404c2b7.jpg",
+   "https://www.vasereality.sk/imgcache/-69b7b989dc4d2bbd5404c2b8.jpg",
+   "https://www.vasereality.sk/imgcache/-69b7b989dc4d2bbd5404c2b9.jpg",
+   "https://www.vasereality.sk/imgcache/-69b7b98adc4d2bbd5404c2ba.jpg"
+  ],
+  "address": {
+   "@type": "PostalAddress",
+   "addressLocality": "Zubák",
+   "postalCode": "02064",
+   "addressCountry": "SK"
+  },
+  "geo": {
+   "@type": "GeoCoordinates",
+   "latitude": 49.1461177,
+   "longitude": 18.240774
+  },
+  "price": 54000,
+  "currency": "EUR",
+  "availability": "https://schema.org/InStock",
+  "features": [
+   [
+    "Status",
+    "aktívne"
+   ],
+   [
+    "Vlastníctvo",
+    "osobné"
+   ],
+   [
+    "Plocha pozemku",
+    "3611 m²"
+   ]
+  ],
+  "iframes": []
+ },
+ {
+  "id": "2631",
+  "url": "https://www.vasereality.sk/nehnutelnost/2631-predaj-4-izbovy-rodinny-dom-sulekovo",
+  "name": "Predaj 4 izbový rodinný dom Šulekovo",
+  "category": "Predaj / Rodinný dom",
+  "description": "STAVEBNÝ POZEMOK 937 m² – HLOHOVEC, ŠULEKOVO\nZBÚRAJTE STARÉ. POSTAVTE SI NOVÉ.\nVAŠE REALITY ponúkajú na predaj nehnuteľnosť s veľkým potenciálom v obľúbenej časti Hlohovca – Šulekovo. Na rovinatom pozemku s celkovou výmerou 937 m², šírkou približne 16 m a dĺžkou cca 64 m, sa nachádza starší rodinný dom v technickom stave vhodnom na rozsiahlu rekonštrukciu alebo odstránenie a následnú výstavbu nového rodinného domu.\nCena nehnuteľnosti: 98 500 €.\nPodľa územnoplánovacej informácie mesta Hlohovec sa pozemok nachádza v regulačnom bloku BV – Bývanie v rodinných domoch vidieckeho charakteru, pričom maximálny index zastavania je 35 % a minimálny index zelene 45 %.\nVeľkou výhodou sú inžinierske siete – voda, elektrina, plyn a kanalizácia a existujúca zástavba. Kupujúci tak nekupuje iba starý dom – kupuje predovšetkým pozemok a možnosť vytvoriť si na ňom nové bývanie podľa vlastných predstáv.\nVizualizácia v inzeráte je ilustračná a predstavuje jednu z možností, ako by mohla budúca novostavba na pozemku vyzerať. Konkrétny projekt musí rešpektovať platné regulatívy a príslušné povoľovacie procesy.\n\nPri kontaktovaní emailom, Vás prosíme uvádzať na Vás i telefonický kontakt. Kontakt: Mária Fursten, tel.: 0904 808 521, mail: fursten@vasereality.sk ID zákazky:2631\n\n\nNa skoré stretnutie s Vami sa teší náš tím - VAŠE REALITY s.r.o. - člen Realitnej Únie Slovenskej republiky.\n&nbsp;",
+  "images": [
+   "https://www.vasereality.sk/imgcache/-6a75c6785ae997c6c50e2377.jpg",
+   "https://www.vasereality.sk/imgcache/-699c441821ad745fd609b8a9.jpg",
+   "https://www.vasereality.sk/imgcache/-699c4409048f72c1950ba9ef.jpg",
+   "https://www.vasereality.sk/imgcache/-699c440b8094ca5895038a68.jpg",
+   "https://www.vasereality.sk/imgcache/-699c440ce01245c2520e0db7.jpg",
+   "https://www.vasereality.sk/imgcache/-699c440efa73acce23003f12.jpg",
+   "https://www.vasereality.sk/imgcache/-699c441087f5d4b9760d475a.jpg",
+   "https://www.vasereality.sk/imgcache/-699c441139fcdca8bf013855.jpg",
+   "https://www.vasereality.sk/imgcache/-699c44159ff02fb5b900370d.jpg",
+   "https://www.vasereality.sk/imgcache/-699c4418f86570cd280767dd.jpg",
+   "https://www.vasereality.sk/imgcache/-699c441be01245c2520e0dbf.jpg",
+   "https://www.vasereality.sk/imgcache/-699c441c9ff02fb5b9003710.jpg",
+   "https://www.vasereality.sk/imgcache/-699c441e0af44fcf8a075f80.jpg",
+   "https://www.vasereality.sk/imgcache/-699c44250ec24c8b7006bd1c.jpg"
+  ],
+  "address": {
+   "@type": "PostalAddress",
+   "addressLocality": "Hlohovec",
+   "postalCode": "92001",
+   "addressCountry": "SK"
+  },
+  "geo": {
+   "@type": "GeoCoordinates",
+   "latitude": 48.4251583,
+   "longitude": 17.8033288
+  },
+  "price": 98500,
+  "currency": "EUR",
+  "availability": "https://schema.org/InStock",
+  "features": [
+   [
+    "Status",
+    "aktívne"
+   ],
+   [
+    "Vlastníctvo",
+    "osobné"
+   ],
+   [
+    "Úžitková plocha",
+    "120 m²"
+   ],
+   [
+    "Zastavaná plocha",
+    "366 m²"
+   ],
+   [
+    "Podlahová plocha",
+    "120 m²"
+   ],
+   [
+    "Skladová plocha",
+    "25 m²"
+   ],
+   [
+    "Stav",
+    "pôvodný stav"
+   ],
+   [
+    "Počet izieb",
+    "4"
+   ],
+   [
+    "Typ budovy",
+    "tehla"
+   ],
+   [
+    "Typ výbavy",
+    "kompletne vybavený"
+   ],
+   [
+    "Garáž",
+    "áno"
+   ],
+   [
+    "Sklad",
+    "áno"
+   ],
+   [
+    "Počet kúpeľní",
+    "1"
+   ],
+   [
+    "Celková plocha",
+    "120 m²"
+   ],
+   [
+    "Počet garáží",
+    "1"
+   ],
+   [
+    "Plocha garáže",
+    "15 m²"
+   ],
+   [
+    "Inžinierske siete",
+    "áno"
+   ],
+   [
+    "Voda",
+    "áno"
+   ],
+   [
+    "Elektrika",
+    "áno"
+   ],
+   [
+    "Plyn",
+    "áno"
+   ],
+   [
+    "Kanalizácia",
+    "áno"
+   ],
+   [
+    "Vykurovanie - centrálne",
+    "áno"
+   ]
+  ],
+  "iframes": []
+ },
+ {
+  "id": "2680",
+  "url": "https://www.vasereality.sk/nehnutelnost/2680-chatka-so-zahradou-trencianske-teplice-rezervovane",
+  "name": "Chatka so záhradou - Trenčianske Teplice - REZERVOVANÉ",
+  "category": "Predaj / Záhradný domček",
+  "description": "VAŠE REALITY - realitná kancelária .\nPredáva v exkluzívnom zastúpení majiteľa záhradnú chatku&nbsp; s pozemkom 758m2, v krásnom prostredí mesta Trenčianske Teplice,\nktorá sa nachádza len pár minút od centra mesta. Lokalita je ideálna pre tých, ktorí hľadajú pokojné miesto v prírode, no zároveň chcú mať blízko kompletnú občiansku vybavenosť v známom kúpeľnom mestečku. Pozemok je situovaný v tichej časti, obklopený lesom a zeleňou, s nádherným výhľadom na okolitú krajinu. Na pozemku sa nachádzajú ovocné stromy. Je vhodný na : výstavbu chaty ,&nbsp;umiestnenie mobilného domu. Momentálne sa na pozemku nachádza na murovaných základoch postavená drevená stavba chatky s balkónom, jednou veľkou obytnou miestnosťou , podpivničená&nbsp;. Stavba sa dá sa využívať jar - jeseň. V chatke je zavedená elektrina .Voda môže byť riiešená studňou,susedia maju studňu.&nbsp;Rozmery pozemku : šírka: 21 m (vstupná časť) – postupne sa rozširuje až na 26m dĺžka : 46 m a 27 m rozloha : 758 m2 Výborná dostupnosť autom až ku pozemku s novou asfaltovou cestou a krásne prostredie robia z tejto nehnuteľnosti ideálne miesto pre oddych a rekreáciu.\n\nCENA : 37 000 €\n\nPri kontaktovaní emailom, Vás prosíme uvádzať na Vás i telefonický kontakt. Kontakt: Mária Fursten, tel.: 0904 808 521, mail: fursten@vasereality.sk ID zákazky:2680\nNa skoré stretnutie s Vami sa teší náš tím - VAŠE REALITY s.r.o. - člen Realitnej Únie Slovenskej republiky\n&nbsp;",
+  "images": [
+   "https://www.vasereality.sk/imgcache/-69c13f55c7e5eb61cc09e1b0.jpg",
+   "https://www.vasereality.sk/imgcache/-69c14048ff209bd86e0773a7.jpg",
+   "https://www.vasereality.sk/imgcache/-69c1410d3dcde8d2190966eb.jpg",
+   "https://www.vasereality.sk/imgcache/-69c1412fed5aa1e68f071bf1.jpg",
+   "https://www.vasereality.sk/imgcache/-69c140db9d388afb4a0d4e38.jpg",
+   "https://www.vasereality.sk/imgcache/-69c13f90761cb56117019c1e.jpg",
+   "https://www.vasereality.sk/imgcache/-69c14029d8545217fa043991.jpg",
+   "https://www.vasereality.sk/imgcache/-69c1407f2b8dd318000eda71.jpg",
+   "https://www.vasereality.sk/imgcache/-69c140baf6e8e69ec60a56da.jpg"
+  ],
+  "address": {
+   "@type": "PostalAddress",
+   "addressLocality": "Trenčianske Teplice",
+   "postalCode": "91451",
+   "addressCountry": "SK"
+  },
+  "geo": {
+   "@type": "GeoCoordinates",
+   "latitude": 48.9094889,
+   "longitude": 18.1675364
+  },
+  "price": 37000,
+  "currency": "EUR",
+  "availability": "https://schema.org/InStock",
+  "features": [
+   [
+    "Status",
+    "rezervované"
+   ],
+   [
+    "Vlastníctvo",
+    "osobné"
+   ],
+   [
+    "Plocha predzáhradky",
+    "42 m²"
+   ],
+   [
+    "Plocha pozemku",
+    "758 m²"
+   ],
+   [
+    "Typ zeme",
+    "svahovitá"
+   ],
+   [
+    "Teritórium",
+    "Intravilán"
+   ],
+   [
+    "Šírka pozemku",
+    "21 m"
+   ],
+   [
+    "Dĺžka pozemku",
+    "46 m"
+   ],
+   [
+    "Úžitková plocha",
+    "42 m²"
+   ],
+   [
+    "Zastavaná plocha",
+    "24 m²"
+   ],
+   [
+    "Podlahová plocha",
+    "24 m²"
+   ],
+   [
+    "Skladová plocha",
+    "15 m²"
+   ],
+   [
+    "Stav",
+    "pôvodný stav"
+   ],
+   [
+    "Typ budovy",
+    "drevo"
+   ],
+   [
+    "Typ výbavy",
+    "čiastočne vybavený"
+   ],
+   [
+    "Balkón",
+    "áno"
+   ],
+   [
+    "Pivnica",
+    "áno"
+   ],
+   [
+    "Rok poslednej rekonštrukcie",
+    "1990"
+   ],
+   [
+    "Celková plocha",
+    "42 m²"
+   ],
+   [
+    "Počet balkónov",
+    "1"
+   ],
+   [
+    "Pivnica plocha",
+    "10 m²"
+   ],
+   [
+    "Počet pivníc",
+    "1"
+   ]
+  ],
+  "iframes": []
+ },
+ {
+  "id": "2689",
+  "url": "https://www.vasereality.sk/nehnutelnost/2689-pozemok-na-predaj-2330m2-lednicke-rovne",
+  "name": "Pozemok na predaj 2330m2 Lednické Rovné",
+  "category": "Predaj / Stavebný pozemok",
+  "description": "EXKLUZÍVNA PONUKA - VAŠE REALITY - realitná kancelária Vám v exkluzívnom zastúpení ponúka na predaj pozemok s výmerou 2330 m2, určený na výstavbu &nbsp;rodinného &nbsp;domu &nbsp;alebo rekreačnej chaty. Nachádza sa v časti obce Lednické Rovne - Medné. Táto lokalita ponúka budúcemu majiteľovi maximálny kľud. Zamilujú si ju predovšetkým milovníci prírody, ktorí túžia počas víkendov stráviť čas mimo mesta – využiť možnosti, ktoré daná lokalita ponúka za účelom relaxu na vidieku, turistiky alebo pre tých, ktorí sa rozhodli žiť na dedine v rodinnom dome.\n\nJe tu taktiež množstvo možností využitia danej polohy pozemku pre milovníkov turistiky, cykloturistiky, lyžovania, hubárčenia. Od &nbsp;obce Lednické Rovné v rozsahu približne 10 km sa nachádza okresné mesto Púchov, v obci Lednické Rovné &nbsp;je kompletná občianska vybavenosť – cukráreň, bar, reštaurácie, Pizzeria, Tesco, ZŠ, MŠ, poliklinika, kostol, pošta, kultúrny dom, kino, autobusová stanica. . &nbsp;Napojenie na diaľnicu smer BA/Žilina je približne 10 km od pozemku.\n\nV blízkosti pozemku sa nachádza miesto možného pripojenia na elektrinu.&nbsp;\n\nV prípade záujmu cena &nbsp;46&nbsp;eur &nbsp;m2.&nbsp;\n\nV prípade záujmu poskytujeme bezplatné poradenstvo pri výbere HU a zabezpečujeme financovanie kúpy pozemkov spolu s poistením osôb a majetku. Spolupracujeme so všetkými bankami a poisťovňami v SR.\n\nKontakt: Mária Fursten, tel.: 0904 808 521, mail: fursten@vasereality.sk",
+  "images": [
+   "https://www.vasereality.sk/imgcache/-6a7058e89b6677f1650284cf.png"
+  ],
+  "address": {
+   "@type": "PostalAddress",
+   "addressLocality": "Lednické Rovne",
+   "postalCode": "02061",
+   "addressCountry": "SK"
+  },
+  "geo": {
+   "@type": "GeoCoordinates",
+   "latitude": 49.0739819,
+   "longitude": 18.2987604
+  },
+  "price": 46,
+  "currency": "EUR",
+  "availability": "https://schema.org/InStock",
+  "features": [
+   [
+    "Status",
+    "aktívne"
+   ],
+   [
+    "Vlastníctvo",
+    "osobné"
+   ],
+   [
+    "Plocha pozemku",
+    "2330 m²"
+   ],
+   [
+    "Typ zeme",
+    "rovina"
+   ],
+   [
+    "Celková plocha",
+    "2330 m²"
+   ]
+  ],
+  "iframes": []
+ },
+ {
   "id": "2791",
   "url": "https://www.vasereality.sk/nehnutelnost/2791-nadstandardny-6-izbovy-rodinny-dom-s-nadhernou-zahradou-pozemok-1048m",
   "name": "Nadštandardný 6-izbový rodinný dom s nádhernou záhradou ,pozemok 1048m",
@@ -981,6 +1436,119 @@
    [
     "Vykurovanie - lokálne",
     "áno"
+   ]
+  ],
+  "iframes": []
+ },
+ {
+  "id": "2969",
+  "url": "https://www.vasereality.sk/nehnutelnost/2969-prenajom-3-izbovy-byt-80-m-2-balkony-zariadeny-centrum-i",
+  "name": "PRENÁJOM | 3-IZBOVÝ BYT | 80 m² | 2 BALKÓNY | ZARIADENÝ | CENTRUM I",
+  "category": "Prenájom / 3 izbový byt",
+  "description": "Ponúkame na dlhodobý prenájom priestranný, zrekonštruovaný a kompletne zariadený 3-izbový byt s výmerou 80 m² a dvoma balkónmi. Nachádza sa vo vyhľadávanej lokalite Centrum I v Dubnici nad Váhom, v blízkosti OC ABC, s kompletnou občianskou vybavenosťou v pešej dostupnosti.\n\nHLAVNÉ VÝHODY\n\n- výmera 80 m²,\n- kompletne zariadený byt pripravený na okamžité nasťahovanie,\n- dva balkóny s východnou a západnou orientáciou,\n- dostatok denného svetla,\n- zrekonštruované murované bytové jadro,\n- pokojný bytový dom s výťahom,\n- priestranná pivnica,\n- miestnosť na odkladanie bicyklov.\n\nDISPOZÍCIA\n\nByt pozostáva z:\n\n- obývacej izby,\n- spálne,\n- detskej izby,\n- samostatnej kuchyne,\n- veľkej vstupnej haly,\n- kúpeľne s vaňou,\n- samostatnej toalety,\n- dvoch balkónov.\n\nVYBAVENIE A STAV\n\nByt sa prenajíma kompletne zariadený a ponúka praktickú dispozíciu s dostatkom úložného priestoru. Nachádza sa na 5. poschodí bytového domu s výťahom.\n\nLOKALITA\n\nV pešej dostupnosti sa nachádzajú OC ABC, obchodný dom Máj, školy, škôlky, poliklinika, obchody, služby, športoviská, autobusová a železničná stanica.\n\nPODMIENKY PRENÁJMU\n\n- Mesačné nájomné: 700 €\n- Vratná kaucia: 1 400 €\n- Pri podpise nájomnej zmluvy sa uhrádza nájomné a vratná kaucia.\n- Byt sa prenajíma dlhodobo.\n- Voľný od 15.12.2026.\n\nKONTAKT\n\nTúto nehnuteľnosť prenajíma spoločnosť Vaše reality, maklérka Mária Fursten - FurstenReality. V prípade záujmu o prenájom alebo bližšie informácie ma neváhajte kontaktovať. Obhliadka bytu je možná po dohode.\n\nTelefón: 0904 808 521\nE-mail: fursten@vasereality.sk",
+  "images": [
+   "https://www.vasereality.sk/imgcache/-6abe5429aac8f0c0c40ea910.jpg",
+   "https://www.vasereality.sk/imgcache/-6abe542ba8924f7788054837.jpg",
+   "https://www.vasereality.sk/imgcache/-6abe54292699f794150657bc.jpg",
+   "https://www.vasereality.sk/imgcache/-6abe54291cfd67f5b3000bef.jpg",
+   "https://www.vasereality.sk/imgcache/-6abe542b05d0b72a7c0c3d84.jpg",
+   "https://www.vasereality.sk/imgcache/-6abe542ae983371495003c61.jpg",
+   "https://www.vasereality.sk/imgcache/-6abe542905d0b72a7c0c3d83.jpg",
+   "https://www.vasereality.sk/imgcache/-6abe542a2699f794150657bd.jpg",
+   "https://www.vasereality.sk/imgcache/-6abe5428eed824b3710c066b.jpg",
+   "https://www.vasereality.sk/imgcache/-6abe54281cfd67f5b3000bee.jpg"
+  ],
+  "address": {
+   "@type": "PostalAddress",
+   "streetAddress": "Centrum I",
+   "addressLocality": "Dubnica nad Váhom",
+   "postalCode": "01841",
+   "addressCountry": "SK"
+  },
+  "geo": {
+   "@type": "GeoCoordinates",
+   "latitude": 48.9618886,
+   "longitude": 18.1740781
+  },
+  "price": 700,
+  "currency": "EUR",
+  "availability": "https://schema.org/InStock",
+  "features": [
+   [
+    "Status",
+    "aktívne"
+   ],
+   [
+    "Vlastníctvo",
+    "osobné"
+   ],
+   [
+    "Úžitková plocha",
+    "80 m²"
+   ],
+   [
+    "Zastavaná plocha",
+    "90 m²"
+   ],
+   [
+    "Podlahová plocha",
+    "80 m²"
+   ],
+   [
+    "Stav",
+    "úplne prerobený"
+   ],
+   [
+    "Počet izieb",
+    "3"
+   ],
+   [
+    "Typ budovy",
+    "panelová stavba"
+   ],
+   [
+    "Balkón",
+    "áno"
+   ],
+   [
+    "Pivnica",
+    "áno"
+   ],
+   [
+    "Výťah",
+    "áno"
+   ],
+   [
+    "Pozícia",
+    "vyššie poschodie"
+   ],
+   [
+    "Poschodie",
+    "5"
+   ],
+   [
+    "Celková plocha",
+    "80 m²"
+   ],
+   [
+    "Plocha balkóna",
+    "5 m²"
+   ],
+   [
+    "Počet balkónov",
+    "2"
+   ],
+   [
+    "Pivnica plocha",
+    "3 m²"
+   ],
+   [
+    "Počet pivníc",
+    "1"
+   ],
+   [
+    "Orientácia",
+    "Východ"
    ]
   ],
   "iframes": []

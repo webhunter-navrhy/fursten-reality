@@ -1,0 +1,11 @@
+Fürsten Reality – logo (variant C: tmavozelená #1F3B34 + zlatá #B08D55)
+
+SVG – vektor, text prevedený na krivky (na web, do grafických programov, pre tlačiareň)
+PDF – vektor pre tlačiareň (vizitky, bannery, polep auta)
+PNG – priehľadné pozadie (Facebook, Word, e-maily)
+
+farebne = na svetlé pozadie · svetle = krémová + zlatá na tmavé pozadie (ako v pätičke webu) · biele = jednofarebné biele na tmavé pozadie alebo fotku
+vodorovne = do hlavičiek a bannerov · nad sebou = na štvorcové a vysoké formáty · symbol = samotný domček (ikona, razítko, avatar)
+Facebook-profilovka-1080px.png = profilová fotka stránky (logo sa zmestí aj do kruhového výrezu)
+
+Svetlé pozadie webu: #F4F0E6 · krémová: #F3EEE2 · svetlá zlatá: #CDB07E

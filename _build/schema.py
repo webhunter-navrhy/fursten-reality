@@ -109,7 +109,7 @@ SCHEMA = [
       'Pochádzam z okolia Púchova a momentálne žijem v Dubnici nad Váhom. Tento kraj nepoznám len z máp a realitných portálov – poznám ho z každodenného života. Viem, kde sa dobre býva, kde sa byty rýchlo predávajú a čo kupujúcich pri dome zaujíma ako prvé. A poznám aj ľudí, ktorí tu žijú.\n\n'
       'Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom i Trenčín sú mi blízke. Na osobné stretnutie či obhliadku preto viem prísť rýchlo – do miest aj priľahlých obcí.\n\n'
       'Pri každej nehnuteľnosti ma zaujíma aj to, čo je za ňou: prečo predávate, kedy sa chcete sťahovať, čo pre Vás znamená dobrá cena. Až potom navrhnem postup realizácie. Na obhliadky chodím osobne a po každej Vám dám vedieť, ako prebehla.\n\n'
-      'Pracujem pod vlastnou značkou **Mária Fürsten Reality** ako samostatná maklérka a spolupracujem s realitnou kanceláriou **VAŠE REALITY s.r.o.**\n\n'
+      'Pracujem pod vlastnou značkou **Fürsten Reality** ako samostatná maklérka a spolupracujem s realitnou kanceláriou **VAŠE REALITY s.r.o.**\n\n'
       'Pri riešení financovania spolupracujem s finančným maklérom Ing. Máriom Janíkom, ktorý Vám poskytne finančné poradenstvo a pomôže s výberom hypotéky či iného vhodného úveru súvisiaceho s kúpou alebo predajom nehnuteľnosti.',
       'Text doplňte vlastnými slovami – čím osobnejšie, tým lepšie.'),
     F('about.signature', 'Podpis', default='Mária Fürsten'),
