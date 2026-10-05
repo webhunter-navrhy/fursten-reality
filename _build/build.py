@@ -15,7 +15,7 @@ S.update(json.load(open('_data/site.json', encoding='utf-8')))
 LIST = [x for x in json.load(open('_data/listings.json', encoding='utf-8')) if not x.get('hidden')]
 REVS = [r for r in json.load(open('_data/reviews.json', encoding='utf-8')) if not r.get('hidden')]
 
-BASE = 'https://webhunter-navrhy.github.io/fursten-reality/'
+BASE = 'https://furstenreality.sk/'
 SITE_ID = 'fursten'
 FORM_API = f'https://webhunter-admin.webhunter.workers.dev/api/{SITE_ID}/form'
 esc = H.escape
