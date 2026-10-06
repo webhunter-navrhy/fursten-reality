@@ -1,1 +1,146 @@
-{}
+{
+ "contact.name": "Mária Fürsten",
+ "contact.role": "realitná maklérka",
+ "contact.phone": "+421 904 808 521",
+ "contact.email": "maria@furstenreality.sk ,info@furstenreality.sk",
+ "contact.hours": "Pondelok – piatok 8:00 – 18:00, po dohode aj cez víkend",
+ "contact.languages": "slovenčina · čeština · nemčina",
+ "contact.region": "Púchov · Považská Bystrica · Ilava · Dubnica nad Váhom · Trenčín a priľahlé obce",
+ "contact.vr_url": "https://www.vasereality.sk/makler/10--maria-fursten",
+ "contact.facebook": "",
+ "contact.instagram": "",
+ "about.photo": "img/site/maria-fursten.webp",
+ "about.photo_small": "img/site/maria-fursten-tvar.webp",
+ "brand.own_logo": true,
+ "legal.name": "Mária Fürsten – Fürsten Reality",
+ "legal.ico": "40380505",
+ "legal.vat": "SK1020072713",
+ "legal.address": "Centrum II 92/54-15, 018 41 Dubnica nad Váhom",
+ "legal.register": "Fyzická osoba – podnikateľka zapísaná v živnostenskom registri",
+ "launch.domain": "",
+ "legal.coop": "Pôsobím pod vlastnou značkou Fürsten Reality ako samostatná maklérka (živnostníčka) a spolupracujem s realitnou kanceláriou VAŠE REALITY s.r.o.",
+ "footer.text": "Predaj, kúpa a prenájom nehnuteľností v Púchove, Považskej Bystrici, Ilave, Dubnici nad Váhom, Trenčíne a v priľahlých lokalitách. Osobne, zrozumiteľne a s rešpektom k Vášmu času.",
+ "home.seo_title": "Mária Fürsten – realitná maklérka | Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom, Trenčín",
+ "home.seo_desc": "Predaj, kúpa a prenájom nehnuteľností v Púchove, Považskej Bystrici, Ilave, Dubnici nad Váhom, Trenčíne a v priľahlých obciach. Mária Fürsten – Fürsten Reality, v spolupráci s VAŠE REALITY.",
+ "home.hero_label": "Realitná maklérka · Púchov · Považská Bystrica · Ilava · Dubnica nad Váhom · Trenčín",
+ "home.hero_title": "Domov\nv dobrých *rukách*.",
+ "home.hero_sub": "Som **Mária Fürsten**. Pomôžem Vám predať nehnuteľnosť za férovú cenu alebo nájsť takú, ktorá bude naozaj Vaša – v Púchove, Považskej Bystrici, Ilave, Dubnici nad Váhom, Trenčíne a v priľahlých obciach.",
+ "home.hero_image": "img/nem/rodinny-dom-mikusovce/01.webp",
+ "home.hero_caption": "Rodinný dom so záhradou · Mikušovce",
+ "home.cta_sell": "Chcem predať nehnuteľnosť",
+ "home.cta_sell_sub": "Ocenenie, príprava a predaj od A po Z",
+ "home.cta_buy": "Hľadám nehnuteľnosť",
+ "home.cta_buy_sub": "Povedzte mi, čo hľadáte, ozvem sa",
+ "home.offers_label": "Z mojej ponuky",
+ "home.offers_title": "Byty, domy aj domy *s potenciálom*",
+ "home.offers_lead": "Moderné bývanie v centre, rodinné domy so záhradou aj staršie domy, ktorým môžete dať nový život.",
+ "about.label": "O mne",
+ "about.title": "Dobrý deň,\nsom *Mária*.",
+ "about.text": "Pochádzam z okolia Púchova a momentálne žijem v Dubnici nad Váhom. Tento kraj nepoznám len z máp a realitných portálov – poznám ho z každodenného života. Viem, kde sa dobre býva, kde sa byty rýchlo predávajú a čo kupujúcich pri dome zaujíma ako prvé. A poznám aj ľudí, ktorí tu žijú.\n\nPúchov, Považská Bystrica, Ilava, Dubnica nad Váhom i Trenčín sú mi blízke. Na osobné stretnutie či obhliadku preto viem prísť rýchlo – do miest aj priľahlých obcí.\n\nPri každej nehnuteľnosti ma zaujíma aj to, čo je za ňou: prečo predávate, kedy sa chcete sťahovať, čo pre Vás znamená dobrá cena. Až potom navrhnem postup realizácie. Na obhliadky chodím osobne a po každej Vám dám vedieť, ako prebehla.\n\nPracujem pod vlastnou značkou **Fürsten Reality** ako samostatná maklérka a spolupracujem s realitnou kanceláriou **VAŠE REALITY s.r.o.**\n\nPri riešení financovania spolupracujem s finančným maklérom Ing. Máriom Janíkom, ktorý Vám poskytne finančné poradenstvo a pomôže s výberom hypotéky či iného vhodného úveru súvisiaceho s kúpou alebo predajom nehnuteľnosti.",
+ "about.signature": "Mária Fürsten",
+ "about.facts": [
+  {
+   "title": "Komunikujem",
+   "text": "po slovensky, česky a nemecky."
+  }
+ ],
+ "services.label": "S čím pomôžem",
+ "services.title": "Jasne, *konkrétne* a bez drobného písma",
+ "services.items": [
+  {
+   "title": "Predaj nehnuteľnosti",
+   "text": "Byt, dom, pozemok aj starší dom na rekonštrukciu.",
+   "points": "Reálnu cenu podľa predajov v okolí, nie podľa prianí\nKontrolu listu vlastníctva a podkladov\nFotografie, popis a pri staršom dome vizualizácie po rekonštrukcii\nInzerciu na realitných portáloch a osobné obhliadky\nRezervačnú a kúpnu zmluvu a návrh na vklad do katastra\nOdovzdanie nehnuteľnosti a prepis energií",
+   "link": "predat.html"
+  },
+  {
+   "title": "Kúpa a hľadanie",
+   "text": "Keď neviete, kde začať, alebo nemáte čas sledovať portály.",
+   "points": "Spolu si ujasníme lokalitu, rozpočet a dispozíciu\nPosielam Vám len ponuky, ktoré dávajú zmysel\nIdem s Vami na obhliadku a upozorním na riziká\nPreverím list vlastníctva, ťarchy a vecné bremená\nHypotéku vybavíte cez overených partnerov",
+   "link": "hladam.html"
+  },
+  {
+   "title": "Prenájom",
+   "text": "Pre majiteľov, ktorí chcú spoľahlivého nájomcu bez starostí.",
+   "points": "Odporučím výšku nájmu a podmienky\nInzerciu a výber nájomcu\nNájomnú zmluvu a preberací protokol\nKauciu a odovzdanie bytu s kľúčmi",
+   "link": "kontakt.html"
+  }
+ ],
+ "process.label": "Ako spolupracujeme",
+ "process.title": "Šesť krokov od prvej kávy *po kľúče*",
+ "process.lead": "Pri predaji viete vždy, v ktorom kroku sa nachádzame a čo nasleduje. Prvé stretnutie je nezáväzné.",
+ "process.steps": [
+  {
+   "title": "Stretnutie a obhliadka",
+   "text": "Prídem sa na nehnuteľnosť pozrieť a vypočujem si Vaše plány, termíny a očakávania."
+  },
+  {
+   "title": "Cena a plán",
+   "text": "Podľa porovnateľných predajov v okolí navrhnem reálnu cenu a postup predaja. Dohodneme sa na podmienkach spolupráce."
+  },
+  {
+   "title": "Podklady a prezentácia",
+   "text": "Skontrolujem potrebné podklady a pripravím fotodokumentáciu, popis a podľa potreby pôdorysy či vizualizácie."
+  },
+  {
+   "title": "Inzercia a obhliadky",
+   "text": "Nehnuteľnosť zverejním na portáloch a obhliadky vediem osobne. Po každej obhliadke Vám dám spätnú väzbu."
+  },
+  {
+   "title": "Zmluvy a bezpečný prevod",
+   "text": "Rezervačná a kúpna zmluva, bezpečná úhrada kúpnej ceny a návrh na vklad do katastra – s právnym servisom."
+  },
+  {
+   "title": "Odovzdanie",
+   "text": "Odovzdanie kľúčov od nehnuteľnosti s preberacím protokolom, stavmi meračov a prepisom energií."
+  }
+ ],
+ "reviews.label": "Povedali o nás",
+ "reviews.title": "Čo hovoria *klienti*",
+ "contactsec.label": "Kontakt",
+ "contactsec.title": "Napíšte mi,\n*ozvem sa* Vám.",
+ "contactsec.text": "Najrýchlejšie ma zastihnete telefonicky. Ak píšete, nechajte mi prosím aj telefónne číslo – zavolám Vám späť.",
+ "offer.seo_title": "Ponuka nehnuteľností – Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom, Trenčín | Fürsten Reality",
+ "offer.seo_desc": "Aktuálna ponuka bytov a domov na predaj a prenájom v Púchove, Považskej Bystrici, Ilave, Dubnici nad Váhom, Trenčíne a v priľahlých obciach. Mária Fürsten – Fürsten Reality.",
+ "offer.title": "Aktuálna *ponuka*",
+ "offer.lead": "Byty a domy na predaj a prenájom od Púchova cez Považskú Bystricu, Ilavu a Dubnicu nad Váhom až po Trenčín – vrátane priľahlých obcí. Na každú nehnuteľnosť Vás rada prevediem osobne.",
+ "offer.sold_title": "Predané *a prenajaté*",
+ "offer.empty": "V tejto kategórii teraz nič nemám. Povedzte mi, čo hľadáte – ozvem sa, keď sa objaví vhodná ponuka.",
+ "offmarket.title": "Nenašli ste? *Povedzte mi*, čo hľadáte.",
+ "offmarket.text": "Niektorí majitelia nechcú predávať cez verejnú inzerciu. Keď mi poviete, čo hľadáte, ozvem sa, len čo sa objaví vhodná nehnuteľnosť – aj taká, ktorá sa na portáloch neukáže.",
+ "offmarket.btn": "Neverejné ponuky – napísať, čo hľadám",
+ "detail.btn": "Dohodnúť obhliadku",
+ "detail.agent_sub": "Nehnuteľnosť Vám rada ukážem osobne",
+ "detail.viz_note": "Vizualizácie sú ilustračné – ukazujú možnú podobu po úprave, nie súčasný stav.",
+ "detail.plan_missing": "Pôdorys Vám rada pošlem na požiadanie.",
+ "detail.price_default": "Podrobnosti o cene a o tom, čo zahŕňa, Vám rada vysvetlím pri obhliadke.",
+ "detail.form_title": "Dohodnime si *obhliadku*",
+ "sell.seo_title": "Chcem predať nehnuteľnosť – Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom, Trenčín | Fürsten Reality",
+ "sell.seo_desc": "Predávate byt, dom alebo pozemok v Púchove, Považskej Bystrici, Ilave, Dubnici nad Váhom, Trenčíne či v okolitých obciach? Napíšte mi pár údajov, ozvem sa a dohodneme nezáväzné stretnutie.",
+ "sell.title": "Chcem predať\n*nehnuteľnosť*",
+ "sell.lead": "Stačí pár údajov. Ozvem sa Vám, prídem sa na nehnuteľnosť pozrieť a navrhnem reálnu cenu aj postup – nezáväzne.",
+ "sell.points": [
+  {
+   "title": "Reálna cena podľa predajov v okolí"
+  },
+  {
+   "title": "Fotografie, popis a pri staršom dome vizualizácie"
+  },
+  {
+   "title": "Osobná obhliadka a moja spätná väzba"
+  },
+  {
+   "title": "Zmluvy, právny servis a vklad do katastra nehnuteľností"
+  }
+ ],
+ "sell.thanks": "Ďakujem, Vaša správa prišla. *Ozvem sa Vám* najneskôr nasledujúci pracovný deň.",
+ "search.seo_title": "Hľadám nehnuteľnosť – Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom, Trenčín | Fürsten Reality",
+ "search.seo_desc": "Hľadáte byt alebo dom v Púchove, Považskej Bystrici, Ilave, Dubnici nad Váhom, Trenčíne alebo v okolitých obciach? Povedzte mi, čo hľadáte, a dám Vám vedieť, keď sa objaví vhodná ponuka.",
+ "search.title": "Hľadám\n*nehnuteľnosť*",
+ "search.lead": "Napíšte mi, čo hľadáte – lokalitu, rozpočet a čo je pre Vás dôležité. Ozvem sa, keď sa objaví nehnuteľnosť, ktorá Vám bude sedieť, aj keď ešte nebude verejne inzerovaná.",
+ "search.thanks": "Ďakujem! Vaše požiadavky mám zapísané a *ozvem sa*, keď budem mať vhodnú ponuku.",
+ "contactpage.seo_title": "Kontakt – Mária Fürsten, realitná maklérka | Púchov, Považská Bystrica, Ilava, Dubnica nad Váhom, Trenčín",
+ "contactpage.title": "Ozvite sa,\n*rada pomôžem*.",
+ "contactpage.thanks": "Ďakujem za správu. *Ozvem sa Vám* čo najskôr.",
+ "privacy.body": "Tieto informácie vysvetľujú, ako spracúvam osobné údaje, ktoré mi zveríte cez formuláre na tomto webe, telefonicky alebo e-mailom.\n\n## Prevádzkovateľ\nMária Fürsten – Fürsten Reality\nCentrum II 92/54-15, 018 41 Dubnica nad Váhom\nIČO: 40380505 · IČ DPH: SK1020072713\nFyzická osoba – podnikateľka zapísaná v živnostenskom registri\nE-mail: fursten@vasereality.sk · telefón: +421 904 808 521\n\n## Aké údaje spracúvam a prečo\nMeno, telefón, e-mail a obsah Vašej správy (napríklad typ a lokalitu nehnuteľnosti alebo to, čo hľadáte). Údaje používam výlučne na to, aby som Vás mohla kontaktovať, odpovedať na Vašu otázku, dohodnúť obhliadku alebo pripraviť ponuku spolupráce.\n\n## Právny základ\nSpracúvanie je nevyhnutné na vykonanie opatrení pred uzavretím zmluvy na Vašu žiadosť (čl. 6 ods. 1 písm. b) GDPR), prípadne ide o môj oprávnený záujem odpovedať na Vašu správu (čl. 6 ods. 1 písm. f) GDPR).\n\n## Ako dlho údaje uchovávam\nKým vybavujeme Vašu požiadavku, najdlhšie však 3 roky od posledného kontaktu. Ak spolu uzavrieme zmluvu, údaje uchovávam po dobu stanovenú právnymi predpismi.\n\n## Komu údaje poskytujem\nÚdaje nepredávam. Pri spolupráci na konkrétnom obchode ich môžem poskytnúť realitnej kancelárii VAŠE REALITY s.r.o., s ktorou spolupracujem, a to len v nevyhnutnom rozsahu. Technicky ich spracúvajú aj poskytovatelia webu a e-mailu (sprostredkovatelia): WebHunter s.r.o. a služba na doručovanie e-mailov z formulárov.\n\n## Vaše práva\nMáte právo na prístup k údajom, ich opravu, vymazanie, obmedzenie spracúvania, prenosnosť a právo namietať. Stačí napísať na fursten@vasereality.sk. Ak si myslíte, že s údajmi nezaobchádzam správne, môžete podať návrh na Úrad na ochranu osobných údajov SR, Hraničná 12, 820 07 Bratislava (dataprotection.gov.sk).\n\n## Cookies\nTento web nepoužíva reklamné ani analytické cookies. Ukladá sa len technicky nevyhnutné nastavenie prehliadača.\n\nPosledná aktualizácia: 30. 9. 2026"
+}
