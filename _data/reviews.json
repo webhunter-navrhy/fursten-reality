@@ -1,11 +1,1 @@
-[
-  {
-    "name": "Test WebHunter",
-    "text": "Toto je testovacia recenzia od WebHunter, bude zmazaná.",
-    "meta": "test – zmazať",
-    "date": "2026-10-06",
-    "hidden": true,
-    "pending": true,
-    "source": "web"
-  }
-]
+[]

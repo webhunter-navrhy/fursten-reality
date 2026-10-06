@@ -144,8 +144,8 @@ SCHEMA = [
       {'title': 'Odovzdanie', 'text': 'Odovzdanie kľúčov od nehnuteľnosti s preberacím protokolom, stavmi meračov a prepisom energií.'}]),
   ]},
   {'title': 'Referencie', 'fields': [
-    F('reviews.label', 'Štítok', default='Referencie'),
-    F('reviews.title', 'Nadpis', 'md', 'Čo hovoria *klienti*', MD + ' Sekcia sa na webe ukáže, až keď v časti Referencie pridáte aspoň jednu referenciu.'),
+    F('reviews.label', 'Štítok', default='Povedali o nás'),
+    F('reviews.title', 'Nadpis', 'md', 'Čo hovoria *klienti*', MD + ' Pod referenciami je formulár, cez ktorý môžu klienti poslať recenziu – zverejní sa až po Vašom schválení v časti Referencie.'),
   ]},
   {'title': 'Kontakt (spodná časť)', 'fields': [
     F('contactsec.label', 'Štítok', default='Kontakt'),

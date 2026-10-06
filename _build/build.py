@@ -306,13 +306,15 @@ def f_chips(name, label, opts, multi=False, first=True):
 def f_contact(msg_label='Správa', msg_ph='', msg_val='', msg_req=False):
     return (f_in('Meno', 'Meno a priezvisko', req=True, auto='name') + f_in('Telefón', 'Telefón', 'tel', auto='tel', ph='+421 …', mode='tel')
             + f_in('E-mail', 'E-mail', 'email', auto='email', full=True) + f_area('Správa', msg_label, msg_ph, msg_val, msg_req))
-def form(kind, fields, submit, thanks, listing=None, cls=''):
+def form(kind, fields, submit, thanks, listing=None, cls='',
+         consent='Súhlasím so spracovaním osobných údajov na účel vybavenia mojej požiadavky.',
+         note='Telefón alebo e-mail stačí jedno. Odpovedám zvyčajne v ten istý deň.'):
     data = f' data-listing-id="{esc(listing["ref"] or listing["slug"])}" data-listing-title="{esc(listing["title"])}" data-listing-url="{BASE}{listing["href"]}"' if listing else ''
     return f'''<form class="form {cls}" data-form="{kind}" data-api="{FORM_API}" novalidate{data}>
   <div class="form-grid">{fields}</div>
   <div class="hp" aria-hidden="true"><label>Web<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-  <label class="consent"><input type="checkbox" name="Súhlas" value="áno" required><span>Súhlasím so spracovaním osobných údajov na účel vybavenia mojej požiadavky. <a class="u" href="@/ochrana-osobnych-udajov.html" target="_blank">Viac informácií</a></span></label>
-  <div class="form-foot"><p class="form-note">Telefón alebo e-mail stačí jedno. Odpovedám zvyčajne v ten istý deň.</p><button type="submit" class="btn"><span>{esc(submit)}</span>{ARR}</button></div>
+  <label class="consent"><input type="checkbox" name="Súhlas" value="áno" required><span>{esc(consent)} <a class="u" href="@/ochrana-osobnych-udajov.html" target="_blank">Viac informácií</a></span></label>
+  <div class="form-foot"><p class="form-note">{esc(note)}</p><button type="submit" class="btn"><span>{esc(submit)}</span>{ARR}</button></div>
   <p class="form-err" role="alert"></p>
   <div class="form-done" role="status" tabindex="-1"><span class="done-ic">{CHECK}</span><p>{md(thanks)}</p><small>Ak je to naliehavé, zavolajte mi na <a class="u" href="{TEL_H}">{esc(TEL)}</a>.</small></div>
 </form>'''
@@ -344,13 +346,32 @@ def offmarket_band():
   </div>
 </section>'''
 
+def review_form():
+    fields = (f_in('Meno', 'Meno (zobrazí sa pri recenzii)', req=True, auto='name', ph='napr. Jana K.')
+              + f_in('Popis', 'S čím som Vám pomohla', ph='napr. predaj bytu, Dubnica nad Váhom')
+              + f_area('Recenzia', 'Vaša recenzia', 'Ako ste boli spokojní so spoluprácou?', req=True)
+              + f_in('E-mail', 'E-mail (nezverejní sa)', 'email', auto='email', full=True))
+    return form('recenzia', fields, 'Odoslať recenziu', 'Ďakujem za Vašu recenziu! Na web ju pridám po prečítaní.',
+                consent='Súhlasím so zverejnením mena a textu recenzie na tomto webe.',
+                note='Recenzia sa na webe zobrazí až po schválení. E-mail nikde nezverejním.')
+
 def reviews_section():
-    if not REVS: return ''
+    form_html = f'''<details class="rev-write rv"><summary class="btn btn--ghost"><span>Napísať recenziu</span>{ARR}</summary>
+      <div class="rev-form">{review_form()}</div></details>'''
+    if not REVS:
+        return f'''<section class="sec reviews" id="referencie">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow rv">{esc(T('reviews.label'))}</p><h2 class="rv">{md(T('reviews.title'))}</h2></div></div>
+    <p class="lead rv">Spolupracovali ste so mnou pri predaji, kúpe alebo prenájme? Budem veľmi rada, ak sa podelíte o svoju skúsenosť.</p>
+    {form_html}
+  </div>
+</section>'''
     items = ''.join(f'<figure class="rev rv" style="--i:{k % 3}"><blockquote>{esc(v.get("text", ""))}</blockquote><figcaption><b>{esc(v.get("name", ""))}</b><span>{esc(v.get("meta", "") or v.get("date", ""))}</span></figcaption></figure>' for k, v in enumerate(REVS))
     return f'''<section class="sec reviews" id="referencie">
   <div class="wrap">
     <div class="sec-head"><div><p class="eyebrow rv">{esc(T('reviews.label'))}</p><h2 class="rv">{md(T('reviews.title'))}</h2></div></div>
     <div class="rev-grid">{items}</div>
+    {form_html}
   </div>
 </section>'''
 

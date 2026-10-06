@@ -736,8 +736,9 @@ function viewReviews() {
   const draw = () => {
     page().innerHTML = `<div class="page-head"><div><h1>Referencie</h1><p>Hodnotenia klientov. Sekcia Referencie sa na úvodnej stránke ukáže, až keď tu bude aspoň jedna viditeľná referencia. Poradie = poradie na webe.</p></div></div>
       ${V.length ? '' : `<div class="card card-pad" style="text-align:center;padding:2.4rem"><p class="muted" style="margin-bottom:1rem">Zatiaľ tu nie sú žiadne referencie. Stačí skopírovať text od spokojného klienta (so súhlasom).</p><button class="btn btn-primary" data-add2>${IC.plus} Pridať prvú referenciu</button></div>`}
-      <div class="rev-grid">${V.map((r, i) => `<article class="card rv${r.hidden ? ' is-hidden' : ''}"><p>${esc(r.text)}</p>
-        <footer><span><b>${esc(r.name)}</b><br><small class="muted">${esc(r.meta || '')}${r.hidden ? ' · skryté' : ''}</small></span><span class="acts">
+      ${V.some((r) => r.pending) ? `<div class="card card-pad" style="margin-bottom:1rem;border-left:4px solid #c9a46a"><b>${plural(V.filter((r) => r.pending).length, 'recenzia čaká', 'recenzie čakajú', 'recenzií čaká')} na Vaše schválenie.</b> <span class="muted">Klienti ich poslali cez formulár na webe. Kliknite na „Schváliť“ a potom na „Uložiť“ – až potom sa zobrazia na webe. Nevhodnú recenziu zmažte.</span></div>` : ''}
+      <div class="rev-grid">${V.map((r, i) => `<article class="card rv${r.hidden ? ' is-hidden' : ''}"${r.pending ? ' style="outline:2px solid #c9a46a"' : ''}><p>${esc(r.text)}</p>
+        <footer><span><b>${esc(r.name)}</b><br><small class="muted">${esc(r.meta || '')}${r.pending ? ` · <b style="color:#a77a2b">čaká na schválenie</b>${r.date ? ' · ' + esc(r.date) : ''}` : r.hidden ? ' · skryté' : ''}</small></span><span class="acts">${r.pending ? `<button class="btn btn-primary" data-ok="${i}" style="padding:.35rem .8rem">Schváliť</button>` : ''}
           <button class="icon-btn" data-up="${i}" title="Posunúť vyššie">${IC.up}</button><button class="icon-btn" data-down="${i}" title="Posunúť nižšie">${IC.down}</button>
           <button class="icon-btn" data-hide="${i}" title="${r.hidden ? 'Zobraziť' : 'Skryť'}">${r.hidden ? IC.eyeOff : IC.eye}</button>
           <button class="icon-btn" data-edit="${i}" title="Upraviť">${IC.pen}</button><button class="icon-btn danger" data-del="${i}" title="Zmazať">${IC.trash}</button></span></footer></article>`).join('')}</div>`;
@@ -764,7 +765,8 @@ function viewReviews() {
     const b = e.target.closest('button'); if (!b) return; const d = b.dataset;
     if (d.up) { move(V, +d.up, +d.up - 1); changed(); draw(); }
     if (d.down) { move(V, +d.down, +d.down + 1); changed(); draw(); }
-    if (d.hide) { V[+d.hide].hidden = !V[+d.hide].hidden; changed(); draw(); }
+    if (d.ok) { const r = V[+d.ok]; r.hidden = false; delete r.pending; changed(); draw(); toast('Recenzia schválená', 'Kliknite na Uložiť – potom sa zobrazí na webe.'); }
+    if (d.hide) { V[+d.hide].hidden = !V[+d.hide].hidden; delete V[+d.hide].pending; changed(); draw(); }
     if (d.edit) { if (await edit(V[+d.edit], false)) { changed(); draw(); } }
     if (d.del) { if (await confirmDlg('Zmazať referenciu?', `Referencia od „${esc(V[+d.del].name)}“ bude odstránená.`)) { V.splice(+d.del, 1); changed(); draw(); } }
   });

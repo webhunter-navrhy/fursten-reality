@@ -562,3 +562,11 @@ a.cb-line:hover span { color: var(--gold-d); }
   .mbar-go { background: var(--g800); color: var(--cream); }
   body.menu-open .mbar, body.lb-open .mbar { display: none; }
 }
+
+/* recenzie od klientov (formulár pod referenciami, zverejnenie po schválení) */
+.rev-write { margin-top: 36px; }
+.rev-write > summary { list-style: none; cursor: pointer; display: inline-flex; }
+.rev-write > summary::-webkit-details-marker { display: none; }
+.rev-write[open] > summary { display: none; }
+.rev-form { max-width: 760px; margin-top: 8px; }
+.reviews .lead { max-width: 640px; }
