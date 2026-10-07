@@ -31,7 +31,7 @@ LOGO_L = 'img/site/brand/fursten-logo-horizontal-light.svg' if OWN else 'img/sit
 LOGO_W = _svgw(LOGO) if OWN else 210
 FAVICON = 'img/site/brand/fursten-mark.svg' if OWN else 'img/site/mark.svg'
 TOUCH_ICON = 'img/site/brand/apple-touch-icon.png' if OWN else 'img/site/apple-touch-icon.png'
-NAME = T('contact.name'); TEL = T('contact.phone'); TEL_H = 'tel:' + re.sub(r'[^\d+]', '', TEL); MAIL = T('contact.email')
+NAME = T('contact.name'); TEL = T('contact.phone'); TEL_H = 'tel:' + re.sub(r'[^\d+]', '', TEL); MAILS = [m for m in re.split(r'[\s,;]+', T('contact.email')) if m] or ['fursten@vasereality.sk']; MAIL = MAILS[0]  # pole môže obsahovať viac adries
 PHOTO = T('about.photo'); PHOTO_S = T('about.photo_small') or PHOTO
 
 # ------------------------------------------------------------------ icons
@@ -236,7 +236,7 @@ def footer(r):
       </ul></div>
       <div><h4>Kontakt</h4><ul>
         <li><a class="u" href="{TEL_H}">{esc(TEL)}</a></li>
-        <li><a class="u" href="mailto:{esc(MAIL)}">{esc(MAIL)}</a></li>
+        {''.join(f'<li><a class="u" href="mailto:{esc(m)}">{esc(m)}</a></li>' for m in MAILS)}
         <li>{esc(T('contact.region'))}</li>
         <li><a class="u" href="{esc(T('contact.vr_url'))}" target="_blank" rel="noopener">Môj profil na Vaše reality</a></li>{soc}
       </ul></div>
@@ -329,7 +329,7 @@ def contact_section(title=None, text=None, anchor='kontakt', show_head=True):
       <p class="lead rv">{md(text or T('contactsec.text'))}</p>
       <div class="cbig rv">
         <a href="{TEL_H}" class="cb-line"><small>Telefón</small><span>{esc(TEL)}</span></a>
-        <a href="mailto:{esc(MAIL)}" class="cb-line"><small>E-mail</small><span>{esc(MAIL)}</span></a>
+        {''.join(f'<a href="mailto:{esc(m)}" class="cb-line"><small>E-mail</small><span>{esc(m)}</span></a>' for m in MAILS)}
         <div class="cb-line"><small>Kedy</small><span class="cb-s">{esc(T('contact.hours'))}</span></div>
       </div>
       <div class="agent-mini rv">{portrait('am-photo')}<div><b>{esc(NAME)}</b><small>{esc(T('contact.role'))} · Fürsten Reality<br>v spolupráci s VAŠE REALITY s.r.o.</small></div></div>
@@ -696,7 +696,7 @@ def build_contact():
 {contact_section(None, T('contactsec.text'), 'kontakt-form', show_head=False)}
 {offmarket_band()}
 '''
-    write('kontakt.html', T('contactpage.seo_title'), f'Zavolajte na {TEL} alebo napíšte na {MAIL}. Mária Fürsten – realitná maklérka pre Púchov, Považskú Bystricu, Ilavu, Dubnicu nad Váhom, Trenčín a priľahlé obce.', body, 'kontakt.html')
+    write('kontakt.html', T('contactpage.seo_title'), f'Zavolajte na {TEL} alebo napíšte na {' alebo '.join(MAILS)}. Mária Fürsten – realitná maklérka pre Púchov, Považskú Bystricu, Ilavu, Dubnicu nad Váhom, Trenčín a priľahlé obce.', body, 'kontakt.html')
 
 # ================================================================== GDPR
 def build_privacy():
