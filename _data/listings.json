@@ -657,7 +657,7 @@
  {
   "id": "rekreacny-pozemok-zubak",
   "slug": "rekreacny-pozemok-zubak",
-  "ref": "2562",
+  "ref": "2983",
   "title": "Rekreačný pozemok 3 611 m², Zubák",
   "short": "Rekreačný pozemok 3 611 m²",
   "kind": "predaj",
@@ -665,8 +665,8 @@
   "status": "aktualne",
   "locality": "Zubák (okres Púchov)",
   "address": "Zubák, okres Púchov",
-  "price": "54 000 €",
-  "price_note": "O kúpe menšej časti pozemku sa dá dohodnúť.",
+  "price": "58 000 €",
+  "price_note": "",
   "price_includes": "",
   "params": {
    "area_plot": "3 611 m² (cca 97 × 41 m)",
@@ -677,11 +677,11 @@
   },
   "facts": [],
   "lead": "Veľký pozemok určený na výstavbu rekreačných chát v pokojnej časti obce Zubák – so vstupom priamo z obecnej cesty, prírodou okolo a hradom Lednica na dosah.",
-  "body": "<p>Ponúkam na predaj pozemok s výmerou 3 611 m² určený na výstavbu rekreačných chát. Nachádza sa v časti obce Zubák. Rozmery pozemku: dĺžka 97 m, šírka 41 m. Táto lokalita ponúka budúcemu majiteľovi maximálny pokoj. Zamilujú si ju predovšetkým milovníci prírody, ktorí túžia počas víkendov stráviť čas mimo mesta – využiť možnosti, ktoré daná lokalita ponúka za účelom relaxu na vidieku, turistiky alebo pre tých, ktorí sa rozhodli žiť na dedine. Elektrina je v blízkosti pozemku, voda z vlastnej studne, plyn ani kanalizácia nie sú. Na pozemok sa vstupuje priamo zo spevnenej obecnej cesty.</p><p>Je tu taktiež množstvo možností využitia danej polohy pozemku pre milovníkov turistiky, cykloturistiky, lyžovania, hubárčenia. V okolí obce Zubák v rozsahu približne 5 km sa nachádza hrad Lednica a krásne prostredie. V blízkej obci Lednické Rovne je kompletná občianska vybavenosť – cukráreň, bar, reštaurácie, Tesco, ZŠ, MŠ, lekár, kostol, pošta, kultúrny dom, kino, banka, autobusová stanica. Napojenie na diaľnicu smer BA/Žilina je približne 20 km od pozemku.</p><p>V blízkosti pozemku sa nachádza miesto možného pripojenia na elektrinu (cca 20 m od najbližšej hranice pozemku).</p><p>V prípade záujmu o menšiu časť pozemku je možná dohoda o veľkosti a cene pozemku.</p><p>Bližšie technické informácie Vám rada poskytnem.</p>",
+  "body": "<p>ZUBÁK – 3 611 m² pre váš oddych v prírode</p><p>Ranná káva s výhľadom na zelené kopce, prechádzky lesom a víkendy mimo ruchu mesta. Ak hľadáte priestor pre vlastné rekreačné zázemie, tento pozemok v obci Zubák stojí za vašu pozornosť.</p><p>Ponúkam na predaj rozľahlý pozemok s výmerou 3 611 m² v prírodnom prostredí okresu Púchov. Trávnatý, svahovitý terén so stromami a výhľadmi na okolitú krajinu osloví najmä záujemcov, ktorí hľadajú miesto na oddych a dostatok vlastného priestoru.</p><p>ČO POZEMOK PONÚKA</p><p>* Výmeru 3 611 m² a približné rozmery 97 × 41 m.</p><p>* Prístup priamo zo spevnenej obecnej cesty.</p><p>* Okolie vhodné na turistiku, cykloturistiku a hubárčenie.</p><p></p><p>MOŽNOSTI VYUŽITIA</p><p>Podklady územného plánu zobrazujú v tejto lokalite plochu D9 navrhovanú na chatovú rekreáciu. Rozsah využitia konkrétnej parcely a podmienky prípadnej výstavby je potrebné potvrdiť aktuálnou územnoplánovacou informáciou obce.</p><p>INŽINIERSKE SIETE</p><p>Miesto možného pripojenia na elektrinu sa podľa dostupných informácií nachádza približne 20 m od hranice pozemku. Podmienky pripojenia je potrebné overiť u distribútora. Zásobovanie vodou sa predpokladá vlastnou studňou, ktorej realizácia podlieha overeniu podmienok a povoleniu. Plyn ani kanalizácia nie sú k dispozícii.</p><p>CENA: 58 000 €</p><p>Približne 16,06 €/m².</p><p>Príďte si pozrieť pozemok osobne a zažiť atmosféru tohto miesta. Pre bližšie informácie a dohodnutie obhliadky ma kontaktujte.</p><p>Mária Fürsten</p><p>0904 808 521</p><p></p>",
   "photos": [
-   "img/nem/rekreacny-pozemok-zubak/00.webp",
-   "img/nem/rekreacny-pozemok-zubak/01.webp",
-   "img/nem/rekreacny-pozemok-zubak/02.webp"
+   "img/uploads/2026-10/rekreacny-pozemok-3-611-m-f795s5.webp",
+   "img/uploads/2026-10/rekreacny-pozemok-3-611-m-4ihj6t.webp",
+   "img/uploads/2026-10/rekreacny-pozemok-3-611-m-5t3wax.webp"
   ],
   "plans": [
    "img/nem/rekreacny-pozemok-zubak/p03.webp"
@@ -698,7 +698,7 @@
   "home": false,
   "hidden": false,
   "seo_desc": "",
-  "updated": "2026-10-02T12:00:00Z"
+  "updated": "2026-10-12T12:37:39.627Z"
  },
  {
   "id": "pozemok-lednicke-rovne-medne",
