@@ -12,3 +12,4 @@ _build/fonts/
 _build/screenshots/
 # podklady od klientky (osobné) – len lokálne
 _build/podklady/
+/export/

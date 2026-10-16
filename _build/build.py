@@ -835,7 +835,52 @@ def build_admin_assets():
     ai = re.sub(r'admin\.js\?v=\w+', 'admin.js?v=' + _ver('admin/admin.js'), ai)
     open('admin/index.html', 'w', encoding='utf-8').write(ai)
 
+def _num(v):
+    d = re.sub(r'[^\d,.]', '', str(v or '')).replace(',', '.')
+    try: return float(d) if d else None
+    except ValueError: return None
+
+def build_export():
+    """Export inzerátov pre realitné portály (XML, CSV, JSON) z _data/listings.json -> export/."""
+    import csv, io
+    from xml.sax.saxutils import escape as xe
+    os.makedirs('export', exist_ok=True)
+    rows = []
+    for x in LIST:
+        if x.get('status') not in ('aktualne', 'rezervovane'): continue
+        pr = x.get('params') or {}
+        g = x.get('geo') or [None, None]
+        rows.append({
+            'ref': x.get('ref') or x['id'], 'id': x['id'], 'url': BASE + 'nehnutelnosti/' + x['slug'] + '.html',
+            'transakcia': 'prenajom' if x.get('kind') == 'prenajom' else 'predaj',
+            'typ': x.get('type', ''), 'stav': x.get('status'), 'nazov': plain(x.get('title')),
+            'lokalita': x.get('locality', ''), 'adresa': x.get('address', ''), 'lat': g[0], 'lon': g[1],
+            'cena_eur': _num(x.get('price')), 'cena_text': x.get('price', ''),
+            'izby': pr.get('rooms', ''), 'uzitkova_plocha_m2': _num(pr.get('area_usable')),
+            'plocha_pozemku_m2': _num(pr.get('area_plot')), 'podlazie': pr.get('floor', ''),
+            'stav_nehnutelnosti': pr.get('condition', ''), 'kurenie': pr.get('heating', ''),
+            'popis': plain(re.sub(r'<[^>]+>', ' ', x.get('body') or x.get('lead') or '')).strip(),
+            'fotky': [BASE + p for p in (x.get('photos') or [])], 'aktualizovane': x.get('updated', ''),
+        })
+    json.dump({'maklerka': T('contact.name'), 'web': BASE, 'inzeraty': rows}, open('export/inzeraty.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    cols = [k for k in rows[0] if k != 'fotky'] + ['fotky'] if rows else []
+    buf = io.StringIO(); w = csv.writer(buf, delimiter=';')
+    w.writerow(cols)
+    for r in rows: w.writerow([' '.join(r[c]) if c == 'fotky' else ('' if r[c] is None else r[c]) for c in cols])
+    open('export/inzeraty.csv', 'w', encoding='utf-8-sig').write(buf.getvalue())
+    out = ['<?xml version="1.0" encoding="UTF-8"?>', f'<inzeraty maklerka="{xe(T("contact.name"))}" web="{BASE}">']
+    for r in rows:
+        out.append('<inzerat>')
+        for k, v in r.items():
+            if k == 'fotky':
+                out.append('<fotky>' + ''.join(f'<foto>{xe(u)}</foto>' for u in v) + '</fotky>')
+            elif v not in (None, ''): out.append(f'<{k}>{xe(str(v))}</{k}>')
+        out.append('</inzerat>')
+    out.append('</inzeraty>')
+    open('export/inzeraty.xml', 'w', encoding='utf-8').write('\n'.join(out))
+    print(f'export: {len(rows)} inzerátov')
+
 if __name__ == '__main__':
     build_home(); build_offer(); build_details(); build_sell(); build_search(); build_contact(); build_privacy(); build_404(); build_logo_preview()
-    build_admin_assets()
+    build_admin_assets(); build_export()
     print(f'{len(PAGES)} stránok vygenerovaných')
