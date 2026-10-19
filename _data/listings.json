@@ -62,7 +62,7 @@
   "short": "Dom s veľkou záhradou",
   "kind": "predaj",
   "type": "Rodinný dom",
-  "status": "aktualne",
+  "status": "rezervovane",
   "locality": "Dubnica nad Váhom – Prejta",
   "address": "Družstevná ulica, Dubnica nad Váhom – Prejta",
   "price": "175 000 €",
@@ -123,7 +123,7 @@
   "home": true,
   "hidden": false,
   "seo_desc": "",
-  "updated": "2026-09-30T12:00:00Z"
+  "updated": "2026-10-19T08:14:44.944Z"
  },
  {
   "id": "rodinny-dom-mikusovce",
