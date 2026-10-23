@@ -442,7 +442,7 @@
   "short": "2-izbový byt na prenájom Trenčín – Dolný Šianec",
   "kind": "prenajom",
   "type": "Byt",
-  "status": "aktualne",
+  "status": "prenajate",
   "locality": "Trenčín – Dolný Šianec",
   "address": "Dolný Šianec, Trenčín",
   "price": "595 € / mesiac",
@@ -484,10 +484,10 @@
    18.0335208
   ],
   "source": "https://www.vasereality.sk/nehnutelnost/2943-2-izbovy-byt-na-prenajom-dolny-sianec",
-  "home": true,
-  "hidden": false,
+  "home": false,
+  "hidden": true,
   "seo_desc": "",
-  "updated": "2026-10-21T10:17:30.715Z"
+  "updated": "2026-10-23T09:03:19.019Z"
  },
  {
   "id": "prenajom-3-izbovy-byt-dubnica-centrum",
