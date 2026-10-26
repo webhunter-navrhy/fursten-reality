@@ -751,7 +751,7 @@
   "short": "Chatka so záhradou s pozemkom 758 m², Trenčianske Teplice -Rezervované",
   "kind": "predaj",
   "type": "Chata / chalupa",
-  "status": "rezervovane",
+  "status": "predane",
   "locality": "Trenčianske Teplice",
   "address": "Trenčianske Teplice",
   "price": "37 000 €",
@@ -792,8 +792,8 @@
   ],
   "source": "https://www.vasereality.sk/nehnutelnost/2680-chatka-so-zahradou-trencianske-teplice-rezervovane",
   "home": false,
-  "hidden": false,
+  "hidden": true,
   "seo_desc": "",
-  "updated": "2026-10-19T11:28:15.365Z"
+  "updated": "2026-10-26T11:26:42.611Z"
  }
 ]
