@@ -791,9 +791,9 @@
    18.1675364
   ],
   "source": "https://www.vasereality.sk/nehnutelnost/2680-chatka-so-zahradou-trencianske-teplice-rezervovane",
-  "home": false,
-  "hidden": true,
+  "home": true,
+  "hidden": false,
   "seo_desc": "",
-  "updated": "2026-10-27T13:04:38.102Z"
+  "updated": "2026-10-27T13:04:59.674Z"
  }
 ]
