@@ -751,7 +751,7 @@
   "short": "Chatka so záhradou s pozemkom 758 m², Trenčianske Teplice -PREDANÉ",
   "kind": "predaj",
   "type": "Chata / chalupa",
-  "status": "aktualne",
+  "status": "predane",
   "locality": "Trenčianske Teplice",
   "address": "Trenčianske Teplice",
   "price": "37 000 €",
@@ -794,6 +794,6 @@
   "home": true,
   "hidden": false,
   "seo_desc": "",
-  "updated": "2026-10-27T13:23:03.871Z"
+  "updated": "2026-10-27T13:25:34.779Z"
  }
 ]
