@@ -880,7 +880,17 @@ def build_export():
     open('export/inzeraty.xml', 'w', encoding='utf-8').write('\n'.join(out))
     print(f'export: {len(rows)} inzerátov')
 
+def build_sitemap():
+    """sitemap.xml + robots.txt (SEO)."""
+    import glob, os
+    files = ['index.html','ponuka.html','predat.html','hladam.html','kontakt.html','ochrana-osobnych-udajov.html'] + sorted(glob.glob('nehnutelnosti/*.html'))
+    urls = [BASE if f == 'index.html' else BASE + f for f in files if os.path.exists(f)]
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(f'<url><loc>{u}</loc></url>' for u in urls) + '\n</urlset>\n'
+    open('sitemap.xml', 'w', encoding='utf-8').write(xml)
+    open('robots.txt', 'w', encoding='utf-8').write(f'User-agent: *\nDisallow: /admin/\nSitemap: {BASE}sitemap.xml\n')
+    print(f'sitemap: {len(urls)} URL')
+
 if __name__ == '__main__':
     build_home(); build_offer(); build_details(); build_sell(); build_search(); build_contact(); build_privacy(); build_404(); build_logo_preview()
-    build_admin_assets(); build_export()
+    build_admin_assets(); build_export(); build_sitemap()
     print(f'{len(PAGES)} stránok vygenerovaných')
