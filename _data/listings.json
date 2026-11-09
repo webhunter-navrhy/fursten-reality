@@ -10,7 +10,7 @@
   "status": "aktualne",
   "locality": "Mikušovce (okres Ilava)",
   "address": "",
-  "price": "211000",
+  "price": "211 000 € ",
   "price_note": "Cena je konečná, nenavyšuje sa o províziu.",
   "price_includes": "právny servis, vklad na kataster",
   "params": {
@@ -47,7 +47,7 @@
   "home": true,
   "hidden": false,
   "seo_desc": "",
-  "updated": "2026-11-09T12:39:06.012Z"
+  "updated": "2026-11-09T15:19:38.782Z"
  },
  {
   "id": "nova-nehnutelnost",
