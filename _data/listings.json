@@ -654,7 +654,7 @@
   "short": "3-izbový byt na prenájom, Dubnica nad Váhom – Centrum I",
   "kind": "prenajom",
   "type": "Byt",
-  "status": "aktualne",
+  "status": "prenajate",
   "locality": "Dubnica nad Váhom – Centrum I",
   "address": "Centrum I, Dubnica nad Váhom",
   "price": "700 € / mesiac",
@@ -697,7 +697,7 @@
   "home": false,
   "hidden": false,
   "seo_desc": "",
-  "updated": "2026-10-19T11:23:58.740Z"
+  "updated": "2026-11-19T11:25:44.527Z"
  },
  {
   "id": "dom-pozemok-937-m2-hlohovec-sulekovo",
